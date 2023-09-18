@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\NANO</_PublishTargetUrl>
+    <History>True|2023-09-15T00:48:28.4562122Z;True|2023-09-08T19:54:27.6417016+02:00;True|2023-09-08T19:30:01.2352721+02:00;True|2023-09-08T17:17:25.2834089+02:00;True|2023-09-08T15:12:00.6980688+02:00;True|2023-09-08T14:48:47.0837722+02:00;True|2023-09-08T14:43:27.5938441+02:00;True|2023-09-01T14:51:01.5907566+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

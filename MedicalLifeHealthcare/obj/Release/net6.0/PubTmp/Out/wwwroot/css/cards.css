@@ -1,0 +1,32 @@
+﻿.content {
+    display: flex; /* Use flexbox to align cards side by side */
+    justify-content: space-between; /* Space evenly between the cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+}
+
+.card {
+    flex: 0 0 calc(33.33% - 20px); /* Each card takes up about one-third of the available space */
+    margin-bottom: 20px; /* Add some spacing between cards */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.card {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}

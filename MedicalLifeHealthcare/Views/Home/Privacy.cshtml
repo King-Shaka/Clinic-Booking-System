@@ -1,0 +1,173 @@
+﻿@model ICollection<MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
+    <title>MedicalLife</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- nice select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+    <!-- font awesome style -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="~/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+    <div class="hero_area">
+        <div class="hero_bg_box">
+            <img src="images/hero-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+
+            <div class="header_bottom">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand " href="index.html"> Finter </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class=""> </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  ">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Service">Service</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Team">Team</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-box1 text-light">
+                            <a href="" class="btn-primary">
+                                <partial name="_loginPartial" />
+                            </a>
+                            <style>
+                                .btn-box1 {
+                                    background-color: #f0f0f0; /* Choose the shade of gray you want for the box */
+                                    padding: 10px; /* Adjust the padding as needed */
+                                    border-radius: 5px; /* Rounded corners */
+                                    display: inline-block; /* Display as inline block to fit the content */
+                                }
+
+                                    .btn-box1 a {
+                                        text-decoration: none; /* Remove underline from the link */
+                                    }
+                            </style>
+
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10 offset-md-1">
+                    <div class="detail-box pr-md-2">
+                        <div class="heading_container">
+                            <h2 class="">
+                                Privacy
+                            </h2>
+                        </div>
+                        <p class="detail_p_mt">
+                            Privacy is a cornerstone of our commitment to your well-being at the Medical Life Clinic. We recognize that the information shared with us, whether it's about your medical history or personal experiences, is highly sensitive and personal. As such, we have implemented rigorous measures to ensure the utmost confidentiality and security of your data.
+
+                            When you entrust us with your information, you can be assured that it will be handled with the utmost care and respect. Only the healthcare professionals and counselors directly involved in your treatment and care will have access to your information. This restricted access helps maintain a high level of privacy and ensures that your personal details remain within the confines of your treatment team.
+
+                            To further reinforce your privacy, we strictly adhere to the guidelines set forth by healthcare privacy regulations, including the HIPAA (Health Insurance Portability and Accountability Act) regulations in the United States, and other relevant data protection laws in your jurisdiction. Our staff undergoes regular training to stay up-to-date with the latest privacy protocols and best practices, emphasizing the significance of maintaining patient confidentiality.
+
+                            Both our physical and electronic records are safeguarded using advanced security technologies. Electronic records are encrypted to prevent unauthorized access, and physical records are stored in locked and secure areas. Additionally, we have implemented secure IT infrastructure to prevent data breaches and ensure that your information remains protected.
+
+                            We understand that trust is at the core of the patient-provider relationship. Should you have any concerns or questions about how your information is handled, please don't hesitate to engage with our team. Your comfort and peace of mind are of utmost importance to us, and we are here to address any inquiries you may have. Your privacy is our unwavering commitment, and we are dedicated to maintaining the confidentiality and security of your information throughout your journey with us.
+                        </p>
+                       
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- about section ends -->
+    <!-- info section -->
+    
+                    
+            
+
+    <!-- end info_section -->
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="">Medical Life Clinic</a>
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+    <!-- jQery -->
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="~/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- nice select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="~/js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+</body>
+
+</html>

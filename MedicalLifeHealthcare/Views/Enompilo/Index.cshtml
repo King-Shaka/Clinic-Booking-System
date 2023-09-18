@@ -1,0 +1,362 @@
+﻿@{
+    ViewData["Title"] = "Index";
+
+    ViewData["ViewTitle"] = "Welcome";
+    ViewData["Description"] = "Your health is our top priority, and we understand that every individual is unique";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+<style>
+    #container {
+        transition: transform 0.3s ease; /* Add a smooth transition */
+    }
+
+        #container:hover {
+            transform: scale(1.1); /* Grow by 10% on hover */
+        }
+
+</style>
+
+
+<div id="carouselExampleIndicators" class="carousel slide  carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/images/Slider/1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/Slider/2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/Slider/3.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<h4 class="text-center mt-3 text-black">With Us, We provide</h4>
+@if (User.IsInRole("Patient"))
+{
+    <div class="container-fluid text-center">
+        <div class="card-group gap-2 border-0">
+
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller="Walk_In">
+                    <img src="~/assets/images/walkin.png" width="90px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>Walk IN</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0 text-center">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller=" Counselling">
+                    <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
+                    <div class="card-body border-0 mt-4">
+                        <strong> Counselling </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
+                    <img src="~/assets/images/Lab.png" width="100px" class="card-img-top mb-3" alt="...">
+                    <div class="card-body border-0 mt-5">
+                        <strong>   Pathology</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
+                    <img src="~/assets/images/Chrnic.png" width="100px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>   Chronic Medication </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller=" GBV">
+                    <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong> GBV </strong>
+                    </div>
+                </a>
+            </div>
+
+          @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
+                <div class="card border-0">
+                    <div class="card-body border-0">
+                        Counselling
+                    </div>
+                </div>
+            </a>
+            <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
+                <div class="card border-0">
+                    <div class="card-body border-0">
+                        Pathology
+                    </div>
+                </div>
+            </a>
+            <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
+                <div class="card border-0">
+                    <div class="card-body ">
+                        Chronic Medication
+                    </div>
+                </div>
+            </a>
+            <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
+                <div class="card border-0">
+                    <div class="card-body">
+                        GBV
+                    </div>
+                </div>
+            </a>
+ *@
+        </div>
+    </div>
+}
+else if (User.IsInRole("Doctor"))
+{
+    <div class="container-fluid text-center">
+        <div class="card-group gap-2 border-0">
+
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller="Walk_In">
+                    <img src="~/assets/images/walkin.png" width="90px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>Walk IN</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0 text-center">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller=" Counselling">
+                    <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
+                    <div class="card-body border-0 mt-4">
+                        <strong> Counselling </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller="Pathology">
+                    <img src="~/assets/images/Lab.png" width="100px" class="card-img-top mb-3" alt="...">
+                    <div class="card-body border-0 mt-5">
+                        <strong>   Pathology</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller="Chronic_Medication">
+                    <img src="~/assets/images/Chrnic.png" width="100px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>   Chronic Medication </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller=" GBV">
+                    <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong> GBV </strong>
+                    </div>
+                </a>
+            </div>
+
+            @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Counselling
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Pathology
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
+        <div class="card border-0">
+        <div class="card-body ">
+        Chronic Medication
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
+        <div class="card border-0">
+        <div class="card-body">
+        GBV
+        </div>
+        </div>
+        </a>
+        *@
+        </div>
+    </div>
+}
+else if (User.IsInRole("Nurse"))
+{
+    <div class="container-fluid text-center">
+        <div class="card-group gap-2 border-0">
+
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Nurse" asp-controller="Walk_In">
+                    <img src="~/assets/images/walkin.png" width="90px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>Walk IN</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0 text-center">
+                <a style="text-decoration:none;" asp-action="Nurse" asp-controller=" Counselling">
+                    <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
+                    <div class="card-body border-0 mt-4">
+                        <strong> Counselling </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Nurse" asp-controller="Pathology">
+                    <img src="~/assets/images/Lab.png" width="100px" class="card-img-top mb-3" alt="...">
+                    <div class="card-body border-0 mt-5">
+                        <strong>   Pathology</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Nurse" asp-controller="Chronic_Medication">
+                    <img src="~/assets/images/Chrnic.png" width="100px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>   Chronic Medication </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Nurse" asp-controller=" GBV">
+                    <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong> GBV </strong>
+                    </div>
+                </a>
+            </div>
+
+            @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Counselling
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Pathology
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
+        <div class="card border-0">
+        <div class="card-body ">
+        Chronic Medication
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
+        <div class="card border-0">
+        <div class="card-body">
+        GBV
+        </div>
+        </div>
+        </a>
+        *@
+        </div>
+    </div>
+}
+else if (User.IsInRole("Administrator"))
+{
+    <div class="container-fluid text-center">
+        <div class="card-group gap-2 border-0">
+
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Walk_In">
+                    <img src="~/assets/images/walkin.png" width="90px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>Walk IN</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0 text-center">
+                <a style="text-decoration:none;" asp-action="Administrator" asp-controller=" Counselling">
+                    <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
+                    <div class="card-body border-0 mt-4">
+                        <strong> Counselling </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Pathology">
+                    <img src="~/assets/images/Lab.png" width="100px" class="card-img-top mb-3" alt="...">
+                    <div class="card-body border-0 mt-5">
+                        <strong>   Pathology</strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Chronic_Medication">
+                    <img src="~/assets/images/Chrnic.png" width="100px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong>   Chronic Medication </strong>
+                    </div>
+                </a>
+            </div>
+            <div id="container" class="card border-0">
+                <a style="text-decoration:none;" asp-action="Administrator" asp-controller=" GBV">
+                    <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
+                    <div class="card-body border-0">
+                        <strong> GBV </strong>
+                    </div>
+                </a>
+            </div>
+
+            @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Counselling
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
+        <div class="card border-0">
+        <div class="card-body border-0">
+        Pathology
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
+        <div class="card border-0">
+        <div class="card-body ">
+        Chronic Medication
+        </div>
+        </div>
+        </a>
+        <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
+        <div class="card border-0">
+        <div class="card-body">
+        GBV
+        </div>
+        </div>
+        </a>
+        *@
+        </div>
+    </div>
+}
+
+
+

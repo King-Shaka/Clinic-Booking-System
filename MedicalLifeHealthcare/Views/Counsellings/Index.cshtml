@@ -1,0 +1,272 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Counselling>
+@using Microsoft.AspNetCore.Identity
+@using MedicalLifeHealthcare.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@* @model IEnumerable<MedicalLifeHealthcare.Models.Counselling> *@
+
+@{
+    ViewData["Title"] = "Counselling Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="~/css/Dashboards.css" />
+    <link rel="stylesheet" href="~/css/EditUser.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Include other stylesheets and scripts here -->
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <!-- Header area start -->
+    <header>
+        <label for="check">
+            <div class="left_area">
+                <h3>MediLife Clinic</h3>
+            </div>
+        </label>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!-- Header area end -->
+    <!-- Mobile navigation bar start -->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="1.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+            <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+            <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+            <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+            <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+            <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+            <a href="#"><i class="fas fa-bars" id="sidebar_btn"></i><span>Menu</span></a>
+        </div> <!-- Mobile navigation content here -->
+    </div>
+    <!-- Mobile navigation bar end -->
+    <!-- Sidebar start -->
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="1.png" class="profile_image" alt="">
+            <li class="nav-item">
+                <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)!</a>
+            </li>
+        </div>
+        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Home</a>
+        <a class="nav-link text-light" asp-area="" asp-controller="Role" asp-action="Counsellor"><i class="fas fa-heart"></i>Counsellor Dashboard</a>
+        <a class="nav-link text-light" asp-area="" asp-controller="Counsellings" asp-action="Index"><i class="	fas fa-heart"></i>Manage Counselling</a>
+        <a class="nav-link text-light" asp-area="" asp-controller="Counsellings" asp-action="Create">Create New</a>
+
+        <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+        
+
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+        </li><!-- Sidebar content here -->
+    </div>
+    <!-- Sidebar end -->
+    <!-- Content start -->
+    <div class="content">
+        <h2>Counselling Sessions</h2>
+
+        <p>
+            <a asp-action="Create" button type="button" class="btn btn-primary">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Session Date
+                    </th>
+                    <th>
+                        Therapist Name
+                    </th>
+                    <th>
+                        Patient Name
+                    </th>
+                    <th>
+                        Patient Contact
+                    </th>
+                    <th>
+                        Therapist Contact
+                    </th>
+                    <th>
+                        Session Notes
+                    </th>
+                    <th>
+                        Is Completed
+                    </th>
+                    <th>
+                        Is Follow-Up Required
+                    </th>
+                    <th>
+                        Follow-Up Date
+                    </th>
+                    <th>
+                        Follow-Up Notes
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SessionDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TherapistName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PatientName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PatientContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TherapistContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SessionNotes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsCompleted)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsFollowUpRequired)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FollowUpDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FollowUpNotes)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" button type="button" class="btn btn-secondary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" button type="button" class="btn btn-primary">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" button type="button" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- Content end -->
+    <!-- Script to toggle mobile navigation -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav_btn').click(function () {
+                $('.mobile_nav_items').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TherapistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TherapistContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCompleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFollowUpRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FollowUpDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FollowUpNotes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TherapistName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientContact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TherapistContact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionNotes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCompleted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsFollowUpRequired)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowUpDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowUpNotes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" button type="button" class="btn btn-secondary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" button type="button" class="btn btn-secondary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" button type="button" class="btn btn-secondary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav_btn').click(function () {
+            $('.mobile_nav_items').toggleClass('active');
+        });
+    });
+</script>

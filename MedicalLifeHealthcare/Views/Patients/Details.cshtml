@@ -1,0 +1,73 @@
+﻿@model MedicalLifeHealthcare.Models.Patient
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MedicalHistory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MedicalHistory)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrescriptionHistory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrescriptionHistory)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdmissionTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdmissionTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MyProperty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MyProperty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MyProperty1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MyProperty1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.patientID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
