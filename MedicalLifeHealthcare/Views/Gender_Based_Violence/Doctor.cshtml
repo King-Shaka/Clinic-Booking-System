@@ -1,0 +1,172 @@
+﻿@using MedicalLifeHealthcare.Models
+@model MedicalLifeHealthcare.Models.Case
+@{
+    ViewData["ViewTitle"] = "Doctor's GBV Dahsboard";
+
+    ViewData["Title"] = "Doctor";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+<section class="section">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Appointments</h3>
+                            <div class="card-right d-flex align-items-center">
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Incidents Reported</h3>
+                            <div class="card-right d-flex align-items-center">
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Cases</h3>
+                            <div class="card-right d-flex align-items-center">
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Referrals</h3>
+                            <div class="card-right d-flex align-items-center">
+                              
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h3 class="text-center">List of  reported gbv incidents</h3>
+<table id="REeport" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Report Date
+            </th>
+            <th>
+                Patient
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Inciodent Date
+            </th>
+            <th>
+                Actions Taken
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (IncidentReport item in ViewBag.Rep)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.FirstName)
+                    @Html.DisplayFor(modelItem => item.Patient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InciodentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionsTaken)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+                        Open Case
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel-@item.Id" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel-@item.Id">Open case</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12">
+                                        <form asp-controller="Cases" asp-action="Create">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                            <div class="form-group">
+
+                                                <input hidden value="@item.Id" asp-for="IncidentReportId" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Notes" class="control-label"></label>
+                                                <input placeholder="More information for the case" asp-for="Notes" class="form-control" />
+                                                <span asp-validation-for="Notes" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Open Case" class="btn btn-primary" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

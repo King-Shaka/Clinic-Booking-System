@@ -1,0 +1,70 @@
+﻿@model MedicalLifeHealthcare.Models.TestSampleVM
+@using MedicalLifeHealthcare.Areas.Identity.Data;
+@using MedicalLifeHealthcare.Models
+
+@{
+    ViewData["ViewTitle"] = "List of Test";
+    ViewData["Description"] = "List of Patient Tests  made by nurse";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+          
+            <th>
+                Clinician Information
+            </th>
+            <th>
+                Request Date
+            </th>
+            <th>
+                Test Name
+            </th>
+            <th>
+                Instructions
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TestRequest item in ViewBag.Test)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clinician.FirstName)  @Html.DisplayFor(modelItem => item.Clinician.LastName)
+                </td>
+                <td>
+                    @item.RequestDate.ToString("dd/MMMM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                   
+                    <a class="btn btn-success" asp-controller="SampleResults" asp-action="My_Results" asp-route-id="@item.TestRequestId">View Results</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

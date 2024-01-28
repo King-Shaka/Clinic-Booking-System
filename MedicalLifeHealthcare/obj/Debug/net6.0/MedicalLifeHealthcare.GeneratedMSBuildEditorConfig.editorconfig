@@ -176,44 +176,120 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/ChronicMedications/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY01lZGljYXRpb25zXENyZWF0ZS5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/All_Appointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEFsbF9BcHBvaW50bWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/ChronicMedications/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY01lZGljYXRpb25zXERlbGV0ZS5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Counselling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENvdW5zZWxsaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/ChronicMedications/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY01lZGljYXRpb25zXERldGFpbHMuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Counselling_Appointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENvdW5zZWxsaW5nX0FwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/ChronicMedications/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY01lZGljYXRpb25zXEVkaXQuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Counselling_Appointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENvdW5zZWxsaW5nX0FwcG9pbnRtZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/ChronicMedications/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY01lZGljYXRpb25zXEluZGV4LmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counsellings/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdzXENyZWF0ZS5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Create_Partial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZV9QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counsellings/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdzXERlbGV0ZS5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counsellings/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdzXERldGFpbHMuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counsellings/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdzXEVkaXQuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counsellings/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdzXEluZGV4LmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Appointments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Cases/My_Case.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZXNcTXlfQ2FzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Chronic_Medication/Doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY19NZWRpY2F0aW9uXERvY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Chronic_Medication/Nurse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY19NZWRpY2F0aW9uXE51cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Chronic_Medication/Patient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hyb25pY19NZWRpY2F0aW9uXFBhdGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling/Counsellor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdcQ291bnNlbGxvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling/Patient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdcUGF0aWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/My_Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcTXlfUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/My_Sessions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcTXlfU2Vzc2lvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Counselling_Sessions/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnNlbGxpbmdfU2Vzc2lvbnNcUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Enompilo/Administrator.cshtml]
@@ -224,24 +300,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5vbXBpbG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/GBVReports/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR0JWUmVwb3J0c1xDcmVhdGUuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Enompilo/Pathology.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5vbXBpbG9cUGF0aG9sb2d5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/GBVReports/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR0JWUmVwb3J0c1xEZWxldGUuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Gender_Based_Violence/Doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyX0Jhc2VkX1Zpb2xlbmNlXERvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/GBVReports/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR0JWUmVwb3J0c1xEZXRhaWxzLmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Gender_Based_Violence/Patient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyX0Jhc2VkX1Zpb2xlbmNlXFBhdGllbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/GBVReports/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR0JWUmVwb3J0c1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/GBVReports/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR0JWUmVwb3J0c1xJbmRleC5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Gender_Based_Violence/Social_Worker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyX0Jhc2VkX1Zpb2xlbmNlXFNvY2lhbF9Xb3JrZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Home/about.cshtml]
@@ -268,52 +340,232 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Labs/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFic1xDcmVhdGUuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/All_GBV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXEFsbF9HQlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Labs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFic1xEZWxldGUuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Labs/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFic1xEZXRhaWxzLmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Labs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFic1xFZGl0LmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Labs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFic1xJbmRleC5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcQ3JlYXRlLmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/IncidentReports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRSZXBvcnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRGVsZXRlLmNzaHRtbA==
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/All_Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcQWxsX1JlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRGV0YWlscy5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcRWRpdC5jc2h0bWw=
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcSW5kZXguY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/PatientDash.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcUGF0aWVudERhc2guY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Patients/Patients.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudHNcUGF0aWVudHMuY3NodG1s
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/MedicalRefills/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFJlZmlsbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/All_feedbacks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xBbGxfZmVlZGJhY2tzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Feedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GZWVkYmFja1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Create_File.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXENyZWF0ZV9GaWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/My_Medical_File.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXE15X01lZGljYWxfRmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_File/Patient_File.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9GaWxlXFBhdGllbnRfRmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/All_Records.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXEFsbF9SZWNvcmRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Medical_Records/MyRecords.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbF9SZWNvcmRzXE15UmVjb3Jkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Pathology/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aG9sb2d5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Pathology/Nurse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aG9sb2d5XE51cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Pathology/Patient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aG9sb2d5XFBhdGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/My_Prescription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xNeV9QcmVzY3JpcHRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Prescriptions/My_Prescription_Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xNeV9QcmVzY3JpcHRpb25fUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Ques/MyQues.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc1xNeVF1ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Counselling_Referalls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcQ291bnNlbGxpbmdfUmVmZXJhbGxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/My_referal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcTXlfcmVmZXJhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Referals/My_referals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJhbHNcTXlfcmVmZXJhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/RoleViews/Admin.cshtml]
@@ -368,8 +620,96 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxQYXRob2xvZ3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/My_Results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xNeV9SZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/SampleResults/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlUmVzdWx0c1xSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/All_Samples.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xBbGxfU2FtcGxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Samples/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Session_Feedback/My_Feedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvbl9GZWVkYmFja1xNeV9GZWVkYmFjay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_Chronic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaHJvbmljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_Counselling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db3Vuc2VsbGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_GBV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9HQlYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_Log-Reg.cshtml]
@@ -384,8 +724,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_Pathology.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXRob2xvZ3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Shared/_WalkIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9XYWxrSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/All_Test_Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXEFsbF9UZXN0X1JlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/TestRequests/My_Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFJlcXVlc3RzXE15X1Rlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Tests/Create.cshtml]
@@ -414,6 +790,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Walk_In/Doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2Fsa19JblxEb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Walk_In/Nurse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2Fsa19JblxOdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/Walk_In/Patient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2Fsa19JblxQYXRpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3rd Year Projects/MedicalLifeHealthcare/MedicalLifeHealthcare/MedicalLifeHealthcare/Views/_ViewImports.cshtml]

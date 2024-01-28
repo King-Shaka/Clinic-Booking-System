@@ -1,0 +1,97 @@
+﻿ @using MedicalLifeHealthcare.Models
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Counselling.cshtml";
+}
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Session)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counsellor_Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Satus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Session_Feedback item in ViewBag.Sessions)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Session.SessionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counsellor_Feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Satus)
+            </td>
+            <td>
+                    @if(item.Satus == "New")
+                    {
+                        <button type="button" class="btn btn-danger mb-1" data-bs-toggle="modal" data-bs-target="#Delete-@item.SessionID">
+                            Reply
+                        </button>
+                        <!-- Button trigger modal -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="Delete-@item.SessionID" tabindex="-1" aria-labelledby="DeleteModalLabel-@item.SessionID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-center" id="DeleteModalLabel-@item.SessionID">Reply to FeedBack</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-12">
+                                            @model MedicalLifeHealthcare.Models.Session_Feedback
+                                            <form asp-action="Edit">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <input value="@item.FeedbackID" type="hidden" asp-for="FeedbackID" />
+                                                <div class="form-group">
+                                                    <label asp-for="Counsellor_Feedback" class="control-label"></label>
+                                                    <input asp-for="Counsellor_Feedback" class="form-control" />
+                                                    <span asp-validation-for="Counsellor_Feedback" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Reply" class="btn btn-primary" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

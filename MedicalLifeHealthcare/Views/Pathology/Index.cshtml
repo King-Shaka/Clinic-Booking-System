@@ -1,0 +1,120 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.TestRequest>
+@{
+    ViewData["ViewTitle"] = "Pathologist's Dashboard";
+    ViewData["Description"] = "Summary of of Pathologist's functionalities";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+<section class="section">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Appointments</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Medical Files</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Test Requests</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Test Result</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h3 class="text-center">Tests Request</h3>
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Full Names
+            </th>
+            <th>
+                Clinician Information
+            </th>
+            <th>
+                Request Date
+            </th>
+            <th>
+                Test Name
+            </th>
+            <th>
+                Instructions
+            </th>
+            <th>
+                Status
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TestRequest item in ViewBag.Test)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.FirstName)  @Html.DisplayFor(modelItem => item.Patient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clinician.FirstName)  @Html.DisplayFor(modelItem => item.Clinician.LastName)
+                </td>
+                <td>
+                    @item.RequestDate.ToString("dd/MMMM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+              
+            </tr>
+        }
+    </tbody>
+</table>table>

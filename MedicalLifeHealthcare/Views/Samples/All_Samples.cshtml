@@ -1,0 +1,207 @@
+﻿@using MedicalLifeHealthcare.Models
+
+@{
+    ViewData["ViewTitle"] = "List of Samples";
+    ViewData["Description"] = "Samples created under specific Test Request";
+    ViewData["Title"] = "All_Samples";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Information
+            </th>
+            <th>
+                Collection Date
+            </th>
+            <th>
+                Collection Location
+            </th>
+            <th>
+                Collection Method
+            </th>
+            <th>
+                Sample Container Number
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Samples item in ViewBag.Test)
+        {
+            <tr>
+                <td>
+                    @item.TestRequest.Patient.FirstName
+                    @item.TestRequest.Patient.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollectionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollectionLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollectionMethod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SampleContainerNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestRequest.Status)
+                </td>
+                <td>
+
+                    @if (item.TestRequest.Status == "Pending")
+                    {
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.TestRequestId">
+                            Collect
+                        </button>
+                        <div class="modal fade" id="exampleModal-@item.TestRequestId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.TestRequestId" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <img src="~/images/sample.png" style="width:70px" />
+                                        <h5 class="modal-title text-center" id="exampleModalLabel-@item.TestRequestId">Collected Samples</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+                                        <lord-icon src="https://cdn.lordicon.com/pkbpswua.json"
+                                                   trigger="loop"
+                                                   delay="2000"
+                                                   colors="primary:#121331,secondary:#c71f16"
+                                                   style="width:250px;height:250px">
+                                        </lord-icon>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <a class="btn btn-success" asp-controller="Samples" asp-action="Collected" asp-route-id="@item.SampleCollectionId">Collect</a> |
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else if (item.TestRequest.Status == "Collected")
+                    {
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.TestRequestId">
+                            Process
+                        </button>
+                        <div class="modal fade" id="exampleModal-@item.TestRequestId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.TestRequestId" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <img src="~/images/sample.png" style="width:70px" />
+                                        <h5 class="modal-title text-center" id="exampleModalLabel-@item.TestRequestId">Add results for the sample</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+                                        <lord-icon src="https://cdn.lordicon.com/pkbpswua.json"
+                                                   trigger="loop"
+                                                   delay="2000"
+                                                   colors="primary:#2516c7,secondary:#4030e8"
+                                                   style="width:250px;height:250px">
+                                        </lord-icon>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <a class="btn btn-success" asp-controller="Samples" asp-action="Process" asp-route-id="@item.SampleCollectionId">Process</a> |
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else if (item.TestRequest.Status == "In Process" || item.TestRequest.Status == "Process")
+                    {
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.TestRequestId">
+                            Add Results
+                        </button>
+                        <div class="modal fade" id="exampleModal-@item.TestRequestId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.TestRequestId" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <img src="~/images/sample.png" style="width:70px" />
+                                        <h5 class="modal-title text-center" id="exampleModalLabel-@item.TestRequestId">Collected Samples</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-12">
+                                            <form asp-controller="SampleResults" asp-action="Create">
+                                                @model MedicalLifeHealthcare.Models.SampleResults
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group">
+                                                    <label asp-for="SamplesID" class="control-label"></label>
+                                                    <input value="@item.SampleCollectionId" asp-for="SamplesID" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="TestName" class="control-label"></label>
+                                                    <input asp-for="TestName" class="form-control" />
+                                                    <span asp-validation-for="TestName" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="ResultValue" class="control-label"></label>
+                                                    <input asp-for="ResultValue" class="form-control" />
+                                                    <span asp-validation-for="ResultValue" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="ReferenceRange" class="control-label"></label>
+                                                    <input asp-for="ReferenceRange" class="form-control" />
+                                                    <span asp-validation-for="ReferenceRange" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="UnitOfMeasure" class="control-label"></label>
+                                                    <input asp-for="UnitOfMeasure" class="form-control" />
+                                                    <span asp-validation-for="UnitOfMeasure" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Interpretation" class="control-label"></label>
+                                                    <input asp-for="Interpretation" class="form-control" />
+                                                    <span asp-validation-for="Interpretation" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Comments" class="control-label"></label>
+                                                    <input asp-for="Comments" class="form-control" />
+                                                    <span asp-validation-for="Comments" class="text-danger"></span>
+                                                </div>
+                                             
+                                                <div class="form-group">
+                                                    <input type="submit" value="Add Results" class="btn btn-primary" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else if (item.TestRequest.Status == "Test Done")
+                    {
+                        <a class="btn btn-success" asp-controller="SampleResults" asp-action="Index" asp-route-id="@item.SampleCollectionId">View Results</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -125,6 +125,18 @@ namespace MedicalLifeHealthcare.Areas.Identity.Pages.Account
                     {
                         return RedirectToAction("Admin", "Enompilo");
                     }
+                   else if (Role.Contains("Pathology"))
+                    {
+                        return RedirectToAction("Index", "Pathology");
+                    }
+                    else if (Role.Contains("Counsellor"))
+                    {
+                        return RedirectToAction("Counsellor", "Counselling");
+                    }
+                    else if (Role.Contains("Social Worker"))
+                    {
+                        return RedirectToAction("Social_Worker", "Gender_Based_Violence");
+                    }
                     else
                     {
                         return RedirectToAction("Index", "Enompilo");

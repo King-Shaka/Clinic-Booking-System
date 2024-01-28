@@ -1,0 +1,57 @@
+﻿@model MedicalLifeHealthcare.Models.Samples
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Samples</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SampleCollectionId" />
+            <div class="form-group">
+                <label asp-for="TestRequestId" class="control-label"></label>
+                <select asp-for="TestRequestId" class="form-control" asp-items="ViewBag.TestRequestId"></select>
+                <span asp-validation-for="TestRequestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionDate" class="control-label"></label>
+                <input asp-for="CollectionDate" class="form-control" />
+                <span asp-validation-for="CollectionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectorName" class="control-label"></label>
+                <input asp-for="CollectorName" class="form-control" />
+                <span asp-validation-for="CollectorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionLocation" class="control-label"></label>
+                <input asp-for="CollectionLocation" class="form-control" />
+                <span asp-validation-for="CollectionLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionMethod" class="control-label"></label>
+                <input asp-for="CollectionMethod" class="form-control" />
+                <span asp-validation-for="CollectionMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SampleContainerNumber" class="control-label"></label>
+                <input asp-for="SampleContainerNumber" class="form-control" />
+                <span asp-validation-for="SampleContainerNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

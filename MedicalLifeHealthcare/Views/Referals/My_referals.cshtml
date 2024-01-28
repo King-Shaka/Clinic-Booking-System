@@ -1,0 +1,78 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Referal>
+@using MedicalLifeHealthcare.Areas.Identity.Data;
+@using MedicalLifeHealthcare.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["ViewTitle"] = "My case referals letter";
+    ViewData["Description"] = "My case Referals letter made by docotor";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+<button id="btnPrint" class="btn btn-primary">
+    Generate report
+</button>
+<div id="Header" class="bg-primary">
+
+</div>
+<div id="Information" class="row">
+    <div class="col-8">
+        <img src="~/images/logos/17.png" style="width:200px" />
+        <p class="mt-3">Date of Report: @ViewBag.Date</p>
+        <p class="mt-3">Time of Report: @ViewBag.Time</p>
+    </div>
+    <div class="col-4 justify-content-md-end">
+        <h4>Patient Information</h4>
+        <p>First Name: @UserManager.GetUserAsync(User).Result.FirstName</p>
+        <p>Last Name: @UserManager.GetUserAsync(User).Result.LastName</p>
+        <p>Email Address: @UserManager.GetUserAsync(User).Result.Email</p>
+    </div>
+</div>
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Doctor full names
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.DateOpened)
+            </th>
+            <th>
+               Case status
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ReferallType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Doctor.FirstName)
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Doctor.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.DateOpened)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferallType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

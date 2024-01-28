@@ -6,31 +6,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\Users\mosen\Desktop\Group41</_PublishTargetUrl>
-    <History>True|2023-09-15T23:02:24.4597424Z;True|2023-09-16T00:40:12.5014535+02:00;True|2023-09-16T00:31:13.0437568+02:00;</History>
+    <History>True|2023-10-24T21:38:37.2943575Z;True|2023-10-23T14:58:02.5516836+02:00;True|2023-09-16T01:02:24.4597424+02:00;True|2023-09-16T00:40:12.5014535+02:00;True|2023-09-16T00:31:13.0437568+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
-  <ItemGroup>
-    <DestinationConnectionStrings Include="ApplicationDbContextConnection">
-      <Value>server=SICT-SQL.MANDELA.AC.ZA%3b database=GRP-03-41%24-dbMedLife%3bIntegrated Security=false%3b user id=GRP-03-41%3b password=grp-03-41#%3b</Value>
-    </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="MedicalLifeHealthcare.Areas.Identity.Data.ApplicationDbContext">
-      <Value>server=SICT-SQL.MANDELA.AC.ZA%3b database=GRP-03-41%24-dbMedLife%3bIntegrated Security=false%3b user id=GRP-03-41%3b password=grp-03-41#%3bMultipleActiveResultSets=true</Value>
-    </EFMigrations>
-  </ItemGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
       <publishTime>09/15/2023 20:31:41</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>09/16/2023 00:28:32</publishTime>
+      <publishTime>10/18/2023 21:43:04</publishTime>
     </File>
     <File Include="Areas/Identity/Data/ApplicationDbContext.cs">
-      <publishTime>09/15/2023 20:31:41</publishTime>
+      <publishTime>10/20/2023 13:52:19</publishTime>
     </File>
     <File Include="Areas/Identity/Data/ApplicationUser.cs">
-      <publishTime>09/15/2023 20:31:41</publishTime>
+      <publishTime>10/06/2023 22:07:45</publishTime>
     </File>
     <File Include="Areas/Identity/Pages/Account/AccessDenied.cshtml">
       <publishTime>09/15/2023 20:31:41</publishTime>
@@ -78,7 +68,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/15/2023 22:35:45</publishTime>
     </File>
     <File Include="Areas/Identity/Pages/Account/Login.cshtml.cs">
-      <publishTime>09/15/2023 23:35:54</publishTime>
+      <publishTime>10/01/2023 07:08:08</publishTime>
     </File>
     <File Include="Areas/Identity/Pages/Account/LoginWith2fa.cshtml">
       <publishTime>09/15/2023 20:31:42</publishTime>
@@ -198,7 +188,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/15/2023 20:31:42</publishTime>
     </File>
     <File Include="Areas/Identity/Pages/Account/Register.cshtml">
-      <publishTime>09/15/2023 22:36:22</publishTime>
+      <publishTime>09/29/2023 22:45:32</publishTime>
     </File>
     <File Include="Areas/Identity/Pages/Account/Register.cshtml.cs">
       <publishTime>09/16/2023 00:14:41</publishTime>
@@ -245,26 +235,74 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Areas/Identity/Pages/_ViewStart.cshtml">
       <publishTime>09/15/2023 20:31:41</publishTime>
     </File>
+    <File Include="Controllers/.cs">
+      <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Controllers/AppointmentsController.cs">
+      <publishTime>10/22/2023 08:48:41</publishTime>
+    </File>
+    <File Include="Controllers/CasesController.cs">
+      <publishTime>10/22/2023 08:58:47</publishTime>
+    </File>
     <File Include="Controllers/ChronicMedicationsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Controllers/Chronic_MedicationController.cs">
+      <publishTime>10/22/2023 01:05:10</publishTime>
+    </File>
+    <File Include="Controllers/CounsellingController.cs">
+      <publishTime>10/22/2023 00:40:19</publishTime>
     </File>
     <File Include="Controllers/CounsellingsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Controllers/Counselling_SessionsController.cs">
+      <publishTime>10/21/2023 22:07:23</publishTime>
+    </File>
     <File Include="Controllers/Enompilo.cs">
-      <publishTime>09/16/2023 00:06:01</publishTime>
+      <publishTime>10/21/2023 19:43:29</publishTime>
     </File>
     <File Include="Controllers/GBVReportsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Controllers/Gender_Based_ViolenceController.cs">
+      <publishTime>10/22/2023 01:18:36</publishTime>
+    </File>
     <File Include="Controllers/HomeController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Controllers/IncidentReportsController.cs">
+      <publishTime>10/22/2023 08:48:41</publishTime>
     </File>
     <File Include="Controllers/LabsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Controllers/MedicalRefillsController.cs">
+      <publishTime>10/21/2023 22:07:23</publishTime>
+    </File>
+    <File Include="Controllers/Medical_FeedbackController.cs">
+      <publishTime>10/24/2023 23:16:59</publishTime>
+    </File>
+    <File Include="Controllers/Medical_FileController.cs">
+      <publishTime>10/21/2023 23:13:30</publishTime>
+    </File>
+    <File Include="Controllers/Medical_RecordsController.cs">
+      <publishTime>10/21/2023 22:07:23</publishTime>
+    </File>
+    <File Include="Controllers/PathologyController.cs">
+      <publishTime>10/24/2023 23:35:13</publishTime>
+    </File>
     <File Include="Controllers/PatientsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Controllers/PrescriptionsController.cs">
+      <publishTime>10/21/2023 22:07:23</publishTime>
+    </File>
+    <File Include="Controllers/QuesController.cs">
+      <publishTime>10/21/2023 22:13:57</publishTime>
+    </File>
+    <File Include="Controllers/ReferalsController.cs">
+      <publishTime>10/24/2023 23:22:08</publishTime>
     </File>
     <File Include="Controllers/RoleController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
@@ -272,11 +310,26 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Controllers/RoleViewController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Controllers/SampleResultsController.cs">
+      <publishTime>10/24/2023 23:05:05</publishTime>
+    </File>
+    <File Include="Controllers/SamplesController.cs">
+      <publishTime>10/16/2023 12:15:02</publishTime>
+    </File>
+    <File Include="Controllers/Session_FeedbackController.cs">
+      <publishTime>10/14/2023 22:41:48</publishTime>
+    </File>
+    <File Include="Controllers/TestRequestsController.cs">
+      <publishTime>10/24/2023 23:01:41</publishTime>
+    </File>
     <File Include="Controllers/TestsController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
     <File Include="Controllers/UserController.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Controllers/Walk_InController.cs">
+      <publishTime>10/22/2023 00:27:46</publishTime>
     </File>
     <File Include="Core/Constants.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
@@ -299,8 +352,134 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Migrations/20230908205408_initDB.Designer.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Migrations/20230922080632_appointment.cs">
+      <publishTime>09/22/2023 10:06:32</publishTime>
+    </File>
+    <File Include="Migrations/20230922080632_appointment.Designer.cs">
+      <publishTime>09/22/2023 10:06:32</publishTime>
+    </File>
+    <File Include="Migrations/20230929213132_addAlerts.cs">
+      <publishTime>09/29/2023 23:31:32</publishTime>
+    </File>
+    <File Include="Migrations/20230929213132_addAlerts.Designer.cs">
+      <publishTime>09/29/2023 23:31:32</publishTime>
+    </File>
+    <File Include="Migrations/20230930095712_addFile.cs">
+      <publishTime>09/30/2023 11:57:12</publishTime>
+    </File>
+    <File Include="Migrations/20230930095712_addFile.Designer.cs">
+      <publishTime>09/30/2023 11:57:12</publishTime>
+    </File>
+    <File Include="Migrations/20231006200916_uodateUser.cs">
+      <publishTime>10/06/2023 22:09:16</publishTime>
+    </File>
+    <File Include="Migrations/20231006200916_uodateUser.Designer.cs">
+      <publishTime>10/06/2023 22:09:16</publishTime>
+    </File>
+    <File Include="Migrations/20231007000026_uodateUser2.cs">
+      <publishTime>10/07/2023 02:00:27</publishTime>
+    </File>
+    <File Include="Migrations/20231007000026_uodateUser2.Designer.cs">
+      <publishTime>10/07/2023 02:00:27</publishTime>
+    </File>
+    <File Include="Migrations/20231007222447_adque.cs">
+      <publishTime>10/08/2023 00:24:47</publishTime>
+    </File>
+    <File Include="Migrations/20231007222447_adque.Designer.cs">
+      <publishTime>10/08/2023 00:24:47</publishTime>
+    </File>
+    <File Include="Migrations/20231008001612_Sessions.cs">
+      <publishTime>10/08/2023 02:16:12</publishTime>
+    </File>
+    <File Include="Migrations/20231008001612_Sessions.Designer.cs">
+      <publishTime>10/08/2023 02:16:12</publishTime>
+    </File>
+    <File Include="Migrations/20231014063531_addSessions.cs">
+      <publishTime>10/14/2023 08:35:31</publishTime>
+    </File>
+    <File Include="Migrations/20231014063531_addSessions.Designer.cs">
+      <publishTime>10/14/2023 08:35:31</publishTime>
+    </File>
+    <File Include="Migrations/20231014135329_update.cs">
+      <publishTime>10/14/2023 15:53:29</publishTime>
+    </File>
+    <File Include="Migrations/20231014135329_update.Designer.cs">
+      <publishTime>10/14/2023 15:53:29</publishTime>
+    </File>
+    <File Include="Migrations/20231014212742_Test.cs">
+      <publishTime>10/14/2023 23:27:42</publishTime>
+    </File>
+    <File Include="Migrations/20231014212742_Test.Designer.cs">
+      <publishTime>10/14/2023 23:27:42</publishTime>
+    </File>
+    <File Include="Migrations/20231015165158_samples.cs">
+      <publishTime>10/15/2023 18:51:58</publishTime>
+    </File>
+    <File Include="Migrations/20231015165158_samples.Designer.cs">
+      <publishTime>10/15/2023 18:51:58</publishTime>
+    </File>
+    <File Include="Migrations/20231016104307_update2.cs">
+      <publishTime>10/16/2023 12:43:07</publishTime>
+    </File>
+    <File Include="Migrations/20231016104307_update2.Designer.cs">
+      <publishTime>10/16/2023 12:43:07</publishTime>
+    </File>
+    <File Include="Migrations/20231019193153_prescription.cs">
+      <publishTime>10/19/2023 21:31:53</publishTime>
+    </File>
+    <File Include="Migrations/20231019193153_prescription.Designer.cs">
+      <publishTime>10/19/2023 21:31:53</publishTime>
+    </File>
+    <File Include="Migrations/20231020043430_addprescritio.cs">
+      <publishTime>10/20/2023 06:34:30</publishTime>
+    </File>
+    <File Include="Migrations/20231020043430_addprescritio.Designer.cs">
+      <publishTime>10/20/2023 06:34:30</publishTime>
+    </File>
+    <File Include="Migrations/20231020093005_addprescritio2.cs">
+      <publishTime>10/20/2023 11:30:05</publishTime>
+    </File>
+    <File Include="Migrations/20231020093005_addprescritio2.Designer.cs">
+      <publishTime>10/20/2023 11:30:05</publishTime>
+    </File>
+    <File Include="Migrations/20231020104040_addprescritio23.cs">
+      <publishTime>10/20/2023 12:40:40</publishTime>
+    </File>
+    <File Include="Migrations/20231020104040_addprescritio23.Designer.cs">
+      <publishTime>10/20/2023 12:40:40</publishTime>
+    </File>
+    <File Include="Migrations/20231020112812_addprescritio235.cs">
+      <publishTime>10/20/2023 13:28:12</publishTime>
+    </File>
+    <File Include="Migrations/20231020112812_addprescritio235.Designer.cs">
+      <publishTime>10/20/2023 13:28:12</publishTime>
+    </File>
+    <File Include="Migrations/20231020120236_addprescritio2357.cs">
+      <publishTime>10/20/2023 14:02:36</publishTime>
+    </File>
+    <File Include="Migrations/20231020120236_addprescritio2357.Designer.cs">
+      <publishTime>10/20/2023 14:02:36</publishTime>
+    </File>
+    <File Include="Migrations/20231022062802_updatecase.cs">
+      <publishTime>10/22/2023 08:28:02</publishTime>
+    </File>
+    <File Include="Migrations/20231022062802_updatecase.Designer.cs">
+      <publishTime>10/22/2023 08:28:02</publishTime>
+    </File>
     <File Include="Migrations/ApplicationDbContextModelSnapshot.cs">
-      <publishTime>09/15/2023 20:32:27</publishTime>
+      <publishTime>10/22/2023 08:28:02</publishTime>
+    </File>
+    <File Include="Models/Alert.cs">
+      <publishTime>09/29/2023 23:25:48</publishTime>
+    </File>
+    <File Include="Models/Appointments.cs">
+      <publishTime>09/25/2023 23:10:52</publishTime>
+    </File>
+    <File Include="Models/Appointment_QueVM.cs">
+      <publishTime>10/08/2023 00:01:30</publishTime>
+    </File>
+    <File Include="Models/Case.cs">
+      <publishTime>10/20/2023 13:14:46</publishTime>
     </File>
     <File Include="Models/ChronicMedication.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
@@ -323,26 +502,68 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Models/CounsellingModels/SessionType.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Models/Counselling_Sessions.cs">
+      <publishTime>10/08/2023 02:11:52</publishTime>
+    </File>
     <File Include="Models/ErrorViewModel.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
     <File Include="Models/GBVReport.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Models/IncidentReport.cs">
+      <publishTime>10/22/2023 08:35:09</publishTime>
+    </File>
     <File Include="Models/Labs.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Models/MedicalRefill.cs">
+      <publishTime>10/20/2023 11:20:04</publishTime>
+    </File>
+    <File Include="Models/Medical_Feedback.cs">
+      <publishTime>10/20/2023 11:20:04</publishTime>
+    </File>
+    <File Include="Models/Medical_File.cs">
+      <publishTime>09/30/2023 11:55:17</publishTime>
+    </File>
+    <File Include="Models/Medical_Records.cs">
+      <publishTime>10/13/2023 11:00:35</publishTime>
     </File>
     <File Include="Models/Patient.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
+    <File Include="Models/Prescription.cs">
+      <publishTime>10/19/2023 22:02:33</publishTime>
+    </File>
+    <File Include="Models/Que.cs">
+      <publishTime>10/08/2023 00:22:35</publishTime>
+    </File>
+    <File Include="Models/Referal.cs">
+      <publishTime>10/20/2023 13:50:56</publishTime>
+    </File>
+    <File Include="Models/SampleResults.cs">
+      <publishTime>10/16/2023 12:38:03</publishTime>
+    </File>
+    <File Include="Models/Samples.cs">
+      <publishTime>10/15/2023 19:19:45</publishTime>
+    </File>
+    <File Include="Models/Session_Feedback.cs">
+      <publishTime>10/14/2023 13:35:57</publishTime>
+    </File>
+    <File Include="Models/TestRequest.cs">
+      <publishTime>10/14/2023 23:19:31</publishTime>
+    </File>
     <File Include="Models/Tests.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
+    </File>
+    <File Include="Models/TestSampleVM.cs">
+      <publishTime>10/15/2023 17:19:51</publishTime>
     </File>
     <File Include="Models/Walkins.cs">
       <publishTime>09/15/2023 20:32:27</publishTime>
     </File>
     <File Include="Program.cs">
-      <publishTime>09/16/2023 00:28:32</publishTime>
+      <publishTime>10/22/2023 00:16:31</publishTime>
     </File>
     <File Include="Repository/RoleRepository.cs">
       <publishTime>09/15/2023 20:32:57</publishTime>
@@ -359,6 +580,54 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Services/EmailSender.cs">
       <publishTime>09/15/2023 22:57:30</publishTime>
     </File>
+    <File Include="Views/Appointments/All_Appointments.cshtml">
+      <publishTime>10/22/2023 00:25:34</publishTime>
+    </File>
+    <File Include="Views/Appointments/Counselling.cshtml">
+      <publishTime>10/14/2023 09:27:04</publishTime>
+    </File>
+    <File Include="Views/Appointments/Counselling_Appointment.cshtml">
+      <publishTime>10/14/2023 01:39:29</publishTime>
+    </File>
+    <File Include="Views/Appointments/Counselling_Appointments.cshtml">
+      <publishTime>10/14/2023 01:40:13</publishTime>
+    </File>
+    <File Include="Views/Appointments/Create.cshtml">
+      <publishTime>09/22/2023 10:47:34</publishTime>
+    </File>
+    <File Include="Views/Appointments/Create_Partial.cshtml">
+      <publishTime>10/24/2023 23:01:39</publishTime>
+    </File>
+    <File Include="Views/Appointments/Delete.cshtml">
+      <publishTime>09/22/2023 09:43:19</publishTime>
+    </File>
+    <File Include="Views/Appointments/Details.cshtml">
+      <publishTime>09/22/2023 09:43:19</publishTime>
+    </File>
+    <File Include="Views/Appointments/Edit.cshtml">
+      <publishTime>09/26/2023 01:04:46</publishTime>
+    </File>
+    <File Include="Views/Appointments/Index.cshtml">
+      <publishTime>10/08/2023 02:00:25</publishTime>
+    </File>
+    <File Include="Views/Cases/Create.cshtml">
+      <publishTime>10/20/2023 13:15:56</publishTime>
+    </File>
+    <File Include="Views/Cases/Delete.cshtml">
+      <publishTime>10/20/2023 13:15:58</publishTime>
+    </File>
+    <File Include="Views/Cases/Details.cshtml">
+      <publishTime>10/20/2023 13:15:58</publishTime>
+    </File>
+    <File Include="Views/Cases/Edit.cshtml">
+      <publishTime>10/20/2023 13:15:58</publishTime>
+    </File>
+    <File Include="Views/Cases/Index.cshtml">
+      <publishTime>10/22/2023 09:05:37</publishTime>
+    </File>
+    <File Include="Views/Cases/My_Case.cshtml">
+      <publishTime>10/20/2023 14:15:51</publishTime>
+    </File>
     <File Include="Views/ChronicMedications/Create.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
     </File>
@@ -373,6 +642,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/ChronicMedications/Index.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
+    </File>
+    <File Include="Views/Chronic_Medication/Doctor.cshtml">
+      <publishTime>10/22/2023 01:05:08</publishTime>
+    </File>
+    <File Include="Views/Chronic_Medication/Nurse.cshtml">
+      <publishTime>10/01/2023 06:31:28</publishTime>
+    </File>
+    <File Include="Views/Chronic_Medication/Patient.cshtml">
+      <publishTime>10/22/2023 01:00:38</publishTime>
+    </File>
+    <File Include="Views/Counselling/Counsellor.cshtml">
+      <publishTime>10/22/2023 00:36:54</publishTime>
+    </File>
+    <File Include="Views/Counselling/Patient.cshtml">
+      <publishTime>10/22/2023 00:45:21</publishTime>
     </File>
     <File Include="Views/Counsellings/Create.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
@@ -389,11 +673,38 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Counsellings/Index.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
     </File>
+    <File Include="Views/Counselling_Sessions/Create.cshtml">
+      <publishTime>10/14/2023 01:50:40</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/Delete.cshtml">
+      <publishTime>10/14/2023 01:51:26</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/Details.cshtml">
+      <publishTime>10/14/2023 01:51:26</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/Edit.cshtml">
+      <publishTime>10/14/2023 01:50:40</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/Index.cshtml">
+      <publishTime>10/22/2023 00:36:52</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/My_Report.cshtml">
+      <publishTime>10/14/2023 22:49:54</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/My_Sessions.cshtml">
+      <publishTime>10/14/2023 15:43:29</publishTime>
+    </File>
+    <File Include="Views/Counselling_Sessions/Report.cshtml">
+      <publishTime>10/22/2023 00:36:54</publishTime>
+    </File>
     <File Include="Views/Enompilo/Administrator.cshtml">
       <publishTime>09/15/2023 23:30:11</publishTime>
     </File>
     <File Include="Views/Enompilo/Index.cshtml">
-      <publishTime>09/16/2023 00:07:16</publishTime>
+      <publishTime>10/23/2023 11:46:30</publishTime>
+    </File>
+    <File Include="Views/Enompilo/Pathology.cshtml">
+      <publishTime>09/23/2023 03:01:56</publishTime>
     </File>
     <File Include="Views/GBVReports/Create.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
@@ -409,6 +720,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/GBVReports/Index.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
+    </File>
+    <File Include="Views/Gender_Based_Violence/Doctor.cshtml">
+      <publishTime>10/22/2023 01:23:45</publishTime>
+    </File>
+    <File Include="Views/Gender_Based_Violence/Patient.cshtml">
+      <publishTime>10/22/2023 01:18:36</publishTime>
+    </File>
+    <File Include="Views/Gender_Based_Violence/Social_Worker.cshtml">
+      <publishTime>10/01/2023 07:11:16</publishTime>
     </File>
     <File Include="Views/Home/about.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
@@ -428,6 +748,24 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/Team.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
     </File>
+    <File Include="Views/IncidentReports/All_GBV.cshtml">
+      <publishTime>10/22/2023 08:58:47</publishTime>
+    </File>
+    <File Include="Views/IncidentReports/Create.cshtml">
+      <publishTime>10/20/2023 12:34:26</publishTime>
+    </File>
+    <File Include="Views/IncidentReports/Delete.cshtml">
+      <publishTime>10/20/2023 12:34:29</publishTime>
+    </File>
+    <File Include="Views/IncidentReports/Details.cshtml">
+      <publishTime>10/20/2023 12:34:27</publishTime>
+    </File>
+    <File Include="Views/IncidentReports/Edit.cshtml">
+      <publishTime>10/20/2023 12:34:27</publishTime>
+    </File>
+    <File Include="Views/IncidentReports/Index.cshtml">
+      <publishTime>10/22/2023 08:48:41</publishTime>
+    </File>
     <File Include="Views/Labs/Create.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
     </File>
@@ -442,6 +780,96 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/Labs/Index.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/All_Requests.cshtml">
+      <publishTime>10/20/2023 10:24:29</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/Create.cshtml">
+      <publishTime>10/20/2023 05:53:33</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/Delete.cshtml">
+      <publishTime>10/20/2023 05:53:34</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/Details.cshtml">
+      <publishTime>10/20/2023 05:53:34</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/Edit.cshtml">
+      <publishTime>10/20/2023 05:53:33</publishTime>
+    </File>
+    <File Include="Views/MedicalRefills/Index.cshtml">
+      <publishTime>10/20/2023 09:22:07</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/All_feedbacks.cshtml">
+      <publishTime>10/20/2023 12:09:50</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/Create.cshtml">
+      <publishTime>10/20/2023 11:29:21</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/Delete.cshtml">
+      <publishTime>10/20/2023 11:21:44</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/Details.cshtml">
+      <publishTime>10/20/2023 11:21:43</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/Edit.cshtml">
+      <publishTime>10/20/2023 11:21:43</publishTime>
+    </File>
+    <File Include="Views/Medical_Feedback/Index.cshtml">
+      <publishTime>10/24/2023 23:22:07</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Create.cshtml">
+      <publishTime>10/06/2023 23:21:58</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Create_File.cshtml">
+      <publishTime>09/30/2023 12:56:13</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Delete.cshtml">
+      <publishTime>10/06/2023 23:30:28</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Details.cshtml">
+      <publishTime>10/06/2023 23:30:30</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Edit.cshtml">
+      <publishTime>10/21/2023 22:37:26</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Index.cshtml">
+      <publishTime>10/07/2023 23:33:35</publishTime>
+    </File>
+    <File Include="Views/Medical_File/My_Medical_File.cshtml">
+      <publishTime>10/21/2023 23:25:30</publishTime>
+    </File>
+    <File Include="Views/Medical_File/Patient_File.cshtml">
+      <publishTime>10/22/2023 00:25:34</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/All_Records.cshtml">
+      <publishTime>10/08/2023 00:41:21</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/Create.cshtml">
+      <publishTime>10/22/2023 00:25:34</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/Delete.cshtml">
+      <publishTime>10/07/2023 23:40:16</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/Details.cshtml">
+      <publishTime>10/07/2023 01:50:28</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/Edit.cshtml">
+      <publishTime>10/07/2023 23:39:09</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/Index.cshtml">
+      <publishTime>10/13/2023 10:45:06</publishTime>
+    </File>
+    <File Include="Views/Medical_Records/MyRecords.cshtml">
+      <publishTime>10/08/2023 01:36:10</publishTime>
+    </File>
+    <File Include="Views/Pathology/Index.cshtml">
+      <publishTime>10/22/2023 00:57:11</publishTime>
+    </File>
+    <File Include="Views/Pathology/Nurse.cshtml">
+      <publishTime>10/24/2023 23:35:13</publishTime>
+    </File>
+    <File Include="Views/Pathology/Patient.cshtml">
+      <publishTime>10/22/2023 00:53:51</publishTime>
     </File>
     <File Include="Views/Patients/Create.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
@@ -463,6 +891,69 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/Patients/Patients.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/Create.cshtml">
+      <publishTime>10/19/2023 21:25:12</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/Delete.cshtml">
+      <publishTime>10/19/2023 21:25:12</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/Details.cshtml">
+      <publishTime>10/19/2023 21:25:12</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/Edit.cshtml">
+      <publishTime>10/19/2023 21:25:12</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/Index.cshtml">
+      <publishTime>10/20/2023 06:07:48</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/My_Prescription.cshtml">
+      <publishTime>10/24/2023 23:09:55</publishTime>
+    </File>
+    <File Include="Views/Prescriptions/My_Prescription_Report.cshtml">
+      <publishTime>10/20/2023 12:23:28</publishTime>
+    </File>
+    <File Include="Views/Ques/Create.cshtml">
+      <publishTime>10/08/2023 00:02:16</publishTime>
+    </File>
+    <File Include="Views/Ques/Delete.cshtml">
+      <publishTime>10/08/2023 00:02:17</publishTime>
+    </File>
+    <File Include="Views/Ques/Details.cshtml">
+      <publishTime>10/08/2023 00:02:17</publishTime>
+    </File>
+    <File Include="Views/Ques/Edit.cshtml">
+      <publishTime>10/08/2023 00:02:16</publishTime>
+    </File>
+    <File Include="Views/Ques/Index.cshtml">
+      <publishTime>10/08/2023 01:14:23</publishTime>
+    </File>
+    <File Include="Views/Ques/MyQues.cshtml">
+      <publishTime>10/08/2023 01:38:26</publishTime>
+    </File>
+    <File Include="Views/Referals/Counselling_Referalls.cshtml">
+      <publishTime>10/24/2023 23:37:22</publishTime>
+    </File>
+    <File Include="Views/Referals/Create.cshtml">
+      <publishTime>10/20/2023 13:52:14</publishTime>
+    </File>
+    <File Include="Views/Referals/Delete.cshtml">
+      <publishTime>10/20/2023 13:52:17</publishTime>
+    </File>
+    <File Include="Views/Referals/Details.cshtml">
+      <publishTime>10/20/2023 13:52:17</publishTime>
+    </File>
+    <File Include="Views/Referals/Edit.cshtml">
+      <publishTime>10/20/2023 13:52:17</publishTime>
+    </File>
+    <File Include="Views/Referals/Index.cshtml">
+      <publishTime>10/22/2023 09:05:37</publishTime>
+    </File>
+    <File Include="Views/Referals/My_referal.cshtml">
+      <publishTime>10/20/2023 14:23:08</publishTime>
+    </File>
+    <File Include="Views/Referals/My_referals.cshtml">
+      <publishTime>10/22/2023 09:33:45</publishTime>
     </File>
     <File Include="Views/Role/Admin.cshtml">
       <publishTime>09/15/2023 20:32:58</publishTime>
@@ -503,11 +994,77 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/RoleViews/Pathology.cshtml">
       <publishTime>09/15/2023 20:32:59</publishTime>
     </File>
+    <File Include="Views/SampleResults/Create.cshtml">
+      <publishTime>10/16/2023 12:25:19</publishTime>
+    </File>
+    <File Include="Views/SampleResults/Delete.cshtml">
+      <publishTime>10/16/2023 12:25:20</publishTime>
+    </File>
+    <File Include="Views/SampleResults/Details.cshtml">
+      <publishTime>10/16/2023 12:25:20</publishTime>
+    </File>
+    <File Include="Views/SampleResults/Edit.cshtml">
+      <publishTime>10/16/2023 12:25:20</publishTime>
+    </File>
+    <File Include="Views/SampleResults/Index.cshtml">
+      <publishTime>10/16/2023 18:48:55</publishTime>
+    </File>
+    <File Include="Views/SampleResults/My_Results.cshtml">
+      <publishTime>10/19/2023 13:14:19</publishTime>
+    </File>
+    <File Include="Views/SampleResults/Report.cshtml">
+      <publishTime>10/16/2023 19:17:12</publishTime>
+    </File>
+    <File Include="Views/Samples/All_Samples.cshtml">
+      <publishTime>10/16/2023 18:27:22</publishTime>
+    </File>
+    <File Include="Views/Samples/Create.cshtml">
+      <publishTime>10/15/2023 17:19:49</publishTime>
+    </File>
+    <File Include="Views/Samples/Delete.cshtml">
+      <publishTime>10/15/2023 17:07:22</publishTime>
+    </File>
+    <File Include="Views/Samples/Details.cshtml">
+      <publishTime>10/15/2023 17:07:22</publishTime>
+    </File>
+    <File Include="Views/Samples/Edit.cshtml">
+      <publishTime>10/15/2023 17:07:21</publishTime>
+    </File>
+    <File Include="Views/Samples/Index.cshtml">
+      <publishTime>10/19/2023 13:11:13</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/Create.cshtml">
+      <publishTime>10/14/2023 13:37:01</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/Delete.cshtml">
+      <publishTime>10/14/2023 13:37:02</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/Details.cshtml">
+      <publishTime>10/14/2023 13:37:02</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/Edit.cshtml">
+      <publishTime>10/14/2023 13:37:01</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/Index.cshtml">
+      <publishTime>10/14/2023 22:06:03</publishTime>
+    </File>
+    <File Include="Views/Session_Feedback/My_Feedback.cshtml">
+      <publishTime>10/14/2023 22:37:55</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/15/2023 20:32:59</publishTime>
     </File>
+    <File Include="Views/Shared/_Chronic.cshtml">
+      <publishTime>10/24/2023 23:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_Counselling.cshtml">
+      <publishTime>10/24/2023 23:28:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_GBV.cshtml">
+      <publishTime>10/22/2023 09:21:04</publishTime>
+    </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/15/2023 20:32:59</publishTime>
+      <publishTime>09/30/2023 13:12:51</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml.css">
       <publishTime>09/15/2023 20:32:59</publishTime>
@@ -519,10 +1076,37 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/15/2023 21:11:51</publishTime>
     </File>
     <File Include="Views/Shared/_Main.cshtml">
-      <publishTime>09/16/2023 00:20:24</publishTime>
+      <publishTime>10/21/2023 21:47:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_Pathology.cshtml">
+      <publishTime>10/21/2023 22:24:38</publishTime>
     </File>
     <File Include="Views/Shared/_ValidationScriptsPartial.cshtml">
       <publishTime>09/15/2023 20:32:59</publishTime>
+    </File>
+    <File Include="Views/Shared/_WalkIn.cshtml">
+      <publishTime>10/21/2023 23:20:03</publishTime>
+    </File>
+    <File Include="Views/TestRequests/All_Test_Requests.cshtml">
+      <publishTime>10/15/2023 21:01:42</publishTime>
+    </File>
+    <File Include="Views/TestRequests/Create.cshtml">
+      <publishTime>10/14/2023 23:38:50</publishTime>
+    </File>
+    <File Include="Views/TestRequests/Delete.cshtml">
+      <publishTime>10/14/2023 23:20:23</publishTime>
+    </File>
+    <File Include="Views/TestRequests/Details.cshtml">
+      <publishTime>10/14/2023 23:20:22</publishTime>
+    </File>
+    <File Include="Views/TestRequests/Edit.cshtml">
+      <publishTime>10/14/2023 23:20:22</publishTime>
+    </File>
+    <File Include="Views/TestRequests/Index.cshtml">
+      <publishTime>10/16/2023 19:20:23</publishTime>
+    </File>
+    <File Include="Views/TestRequests/My_Test.cshtml">
+      <publishTime>10/24/2023 23:02:41</publishTime>
     </File>
     <File Include="Views/Tests/Create.cshtml">
       <publishTime>09/15/2023 20:32:59</publishTime>
@@ -544,6 +1128,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/User/Index.cshtml">
       <publishTime>09/15/2023 20:32:59</publishTime>
+    </File>
+    <File Include="Views/Walk_In/Doctor.cshtml">
+      <publishTime>09/25/2023 23:32:11</publishTime>
+    </File>
+    <File Include="Views/Walk_In/Nurse.cshtml">
+      <publishTime>10/22/2023 00:27:11</publishTime>
+    </File>
+    <File Include="Views/Walk_In/Patient.cshtml">
+      <publishTime>10/21/2023 22:29:09</publishTime>
     </File>
     <File Include="Views/_ViewImports.cshtml">
       <publishTime>09/15/2023 20:32:57</publishTime>
@@ -644,11 +1237,23 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="wwwroot/assets/images/background/auth.jpg">
       <publishTime>08/09/2023 17:45:56</publishTime>
     </File>
+    <File Include="wwwroot/assets/images/Chrnic.png">
+      <publishTime>09/18/2023 17:31:44</publishTime>
+    </File>
+    <File Include="wwwroot/assets/images/Counse.png">
+      <publishTime>09/18/2023 17:22:26</publishTime>
+    </File>
     <File Include="wwwroot/assets/images/favicon.png">
       <publishTime>08/09/2023 17:45:52</publishTime>
     </File>
     <File Include="wwwroot/assets/images/favicon.svg">
       <publishTime>08/09/2023 17:45:52</publishTime>
+    </File>
+    <File Include="wwwroot/assets/images/GBV.png">
+      <publishTime>09/18/2023 17:33:14</publishTime>
+    </File>
+    <File Include="wwwroot/assets/images/Lab.png">
+      <publishTime>09/18/2023 17:24:42</publishTime>
     </File>
     <File Include="wwwroot/assets/images/logo.png">
       <publishTime>08/09/2023 17:45:52</publishTime>
@@ -715,6 +1320,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="wwwroot/assets/images/screenshot.png">
       <publishTime>08/09/2023 17:45:52</publishTime>
+    </File>
+    <File Include="wwwroot/assets/images/walkin.png">
+      <publishTime>09/18/2023 17:20:53</publishTime>
     </File>
     <File Include="wwwroot/assets/js/app.html">
       <publishTime>08/09/2023 17:46:02</publishTime>
@@ -1778,17 +2386,32 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="wwwroot/fonts/fontawesome-webfont.woff2">
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
+    <File Include="wwwroot/gif/time.gif">
+      <publishTime>10/08/2023 00:51:34</publishTime>
+    </File>
     <File Include="wwwroot/images/17.png">
       <publishTime>09/15/2023 20:45:53</publishTime>
     </File>
     <File Include="wwwroot/images/about-img.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
+    <File Include="wwwroot/images/APPOINTMENT-removebg-preview.png">
+      <publishTime>09/30/2023 00:06:54</publishTime>
+    </File>
+    <File Include="wwwroot/images/Appprove.png">
+      <publishTime>09/30/2023 02:37:01</publishTime>
+    </File>
+    <File Include="wwwroot/images/Calendar.png">
+      <publishTime>10/08/2023 02:04:47</publishTime>
+    </File>
     <File Include="wwwroot/images/client.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
     <File Include="wwwroot/images/contact-img.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/Delete-removebg-preview.png">
+      <publishTime>09/29/2023 23:01:27</publishTime>
     </File>
     <File Include="wwwroot/images/Email.png">
       <publishTime>09/15/2023 23:07:44</publishTime>
@@ -1800,16 +2423,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
     <File Include="wwwroot/images/Logos/17.png">
-      <publishTime>09/15/2023 20:45:53</publishTime>
+      <publishTime>10/22/2023 09:33:27</publishTime>
     </File>
     <File Include="wwwroot/images/Logos/18.png">
       <publishTime>09/15/2023 18:44:54</publishTime>
     </File>
     <File Include="wwwroot/images/Logos/19.png">
-      <publishTime>09/15/2023 21:42:39</publishTime>
+      <publishTime>10/22/2023 09:36:18</publishTime>
     </File>
     <File Include="wwwroot/images/Logos/favicon.ico">
       <publishTime>09/15/2023 21:08:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/Medical.png">
+      <publishTime>09/30/2023 12:13:36</publishTime>
     </File>
     <File Include="wwwroot/images/p1.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
@@ -1819,6 +2445,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="wwwroot/images/p3.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/request.png">
+      <publishTime>10/20/2023 06:13:31</publishTime>
     </File>
     <File Include="wwwroot/images/s1.png">
       <publishTime>09/15/2023 20:33:00</publishTime>
@@ -1838,8 +2467,20 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="wwwroot/images/s6.png">
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
+    <File Include="wwwroot/images/Sample.png">
+      <publishTime>10/15/2023 17:40:58</publishTime>
+    </File>
     <File Include="wwwroot/images/slider-bg.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/Slider/1.png">
+      <publishTime>09/18/2023 09:56:28</publishTime>
+    </File>
+    <File Include="wwwroot/images/Slider/2.png">
+      <publishTime>09/18/2023 09:56:28</publishTime>
+    </File>
+    <File Include="wwwroot/images/Slider/3.png">
+      <publishTime>09/18/2023 09:56:28</publishTime>
     </File>
     <File Include="wwwroot/images/t1.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
@@ -1849,6 +2490,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="wwwroot/images/t3.jpg">
       <publishTime>09/15/2023 20:33:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/user.png">
+      <publishTime>10/06/2023 22:03:32</publishTime>
     </File>
     <File Include="wwwroot/js/bootstrap.js">
       <publishTime>09/15/2023 20:33:00</publishTime>
@@ -1863,7 +2507,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/15/2023 20:33:00</publishTime>
     </File>
     <File Include="wwwroot/js/site.js">
-      <publishTime>09/15/2023 21:33:32</publishTime>
+      <publishTime>10/21/2023 23:25:32</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
       <publishTime>09/15/2023 20:33:01</publishTime>
@@ -2036,5 +2680,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
       <publishTime>09/15/2023 20:33:02</publishTime>
     </File>
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ApplicationDbContextConnection">
+      <Value>server=SICT-SQL.MANDELA.AC.ZA%3b database=GRP-03-41%24-dbMedLife%3bIntegrated Security=false%3b user id=GRP-03-41%3b password=grp-03-41#%3b</Value>
+    </DestinationConnectionStrings>
   </ItemGroup>
 </Project>

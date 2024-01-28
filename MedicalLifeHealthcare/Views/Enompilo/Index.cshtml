@@ -16,7 +16,13 @@
 
 </style>
 
+@if (TempData["Success"] != null)
+{
 
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
 <div id="carouselExampleIndicators" class="carousel slide  carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -47,6 +53,26 @@
 <h4 class="text-center mt-3 text-black">With Us, We provide</h4>
 @if (User.IsInRole("Patient"))
 {
+    @if (TempData["FileFound"] == null)
+    {
+        <div id="myModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                      
+                            <h3 class="modal-title"><img src="~/images/Medical.png" style="width:50px" />  Let us know more about your Medical Background</h3>
+                            <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                    </div>
+                    <div class="modal-body">
+                        <partial name="~/Views/Medical_File/Create_File.cshtml" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
     <div class="container-fluid text-center">
         <div class="card-group gap-2 border-0">
 
@@ -59,7 +85,7 @@
                 </a>
             </div>
             <div id="container" class="card border-0 text-center">
-                <a style="text-decoration:none;" asp-action="Patient" asp-controller=" Counselling">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
                     <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
                     <div class="card-body border-0 mt-4">
                         <strong> Counselling </strong>
@@ -83,7 +109,7 @@
                 </a>
             </div>
             <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Patient" asp-controller=" GBV">
+                <a style="text-decoration:none;" asp-action="Patient" asp-controller="Gender_Based_Violence">
                     <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
                     <div class="card-body border-0">
                         <strong> GBV </strong>
@@ -91,35 +117,7 @@
                 </a>
             </div>
 
-          @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
-                <div class="card border-0">
-                    <div class="card-body border-0">
-                        Counselling
-                    </div>
-                </div>
-            </a>
-            <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
-                <div class="card border-0">
-                    <div class="card-body border-0">
-                        Pathology
-                    </div>
-                </div>
-            </a>
-            <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
-                <div class="card border-0">
-                    <div class="card-body ">
-                        Chronic Medication
-                    </div>
-                </div>
-            </a>
-            <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
-                <div class="card border-0">
-                    <div class="card-body">
-                        GBV
-                    </div>
-                </div>
-            </a>
- *@
+        
         </div>
     </div>
 }
@@ -161,43 +159,13 @@ else if (User.IsInRole("Doctor"))
                 </a>
             </div>
             <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Doctor" asp-controller=" GBV">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller="Gender_Based_Violence">
                     <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
                     <div class="card-body border-0">
                         <strong> GBV </strong>
                     </div>
                 </a>
             </div>
-
-            @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
-        <div class="card border-0">
-        <div class="card-body border-0">
-        Counselling
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
-        <div class="card border-0">
-        <div class="card-body border-0">
-        Pathology
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
-        <div class="card border-0">
-        <div class="card-body ">
-        Chronic Medication
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
-        <div class="card border-0">
-        <div class="card-body">
-        GBV
-        </div>
-        </div>
-        </a>
-        *@
         </div>
     </div>
 }
@@ -239,7 +207,7 @@ else if (User.IsInRole("Nurse"))
                 </a>
             </div>
             <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Nurse" asp-controller=" GBV">
+                <a style="text-decoration:none;" asp-action="Doctor" asp-controller="Gender_Based_Violence">
                     <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
                     <div class="card-body border-0">
                         <strong> GBV </strong>
@@ -279,84 +247,7 @@ else if (User.IsInRole("Nurse"))
         </div>
     </div>
 }
-else if (User.IsInRole("Administrator"))
-{
-    <div class="container-fluid text-center">
-        <div class="card-group gap-2 border-0">
 
-            <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Walk_In">
-                    <img src="~/assets/images/walkin.png" width="90px" class="card-img-top" alt="...">
-                    <div class="card-body border-0">
-                        <strong>Walk IN</strong>
-                    </div>
-                </a>
-            </div>
-            <div id="container" class="card border-0 text-center">
-                <a style="text-decoration:none;" asp-action="Administrator" asp-controller=" Counselling">
-                    <img src="~/assets/images/Counse.png" width="100px" class="card-img-top mb-5" alt="...">
-                    <div class="card-body border-0 mt-4">
-                        <strong> Counselling </strong>
-                    </div>
-                </a>
-            </div>
-            <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Pathology">
-                    <img src="~/assets/images/Lab.png" width="100px" class="card-img-top mb-3" alt="...">
-                    <div class="card-body border-0 mt-5">
-                        <strong>   Pathology</strong>
-                    </div>
-                </a>
-            </div>
-            <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Administrator" asp-controller="Chronic_Medication">
-                    <img src="~/assets/images/Chrnic.png" width="100px" class="card-img-top" alt="...">
-                    <div class="card-body border-0">
-                        <strong>   Chronic Medication </strong>
-                    </div>
-                </a>
-            </div>
-            <div id="container" class="card border-0">
-                <a style="text-decoration:none;" asp-action="Administrator" asp-controller=" GBV">
-                    <img src="~/assets/images/GBV.png" width="80px" class="card-img-top" alt="...">
-                    <div class="card-body border-0">
-                        <strong> GBV </strong>
-                    </div>
-                </a>
-            </div>
-
-            @*   <a style="text-decoration:none;" asp-action="Patient" asp-controller="Counselling">
-        <div class="card border-0">
-        <div class="card-body border-0">
-        Counselling
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Pathology">
-        <div class="card border-0">
-        <div class="card-body border-0">
-        Pathology
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="Chronic_Medication">
-        <div class="card border-0">
-        <div class="card-body ">
-        Chronic Medication
-        </div>
-        </div>
-        </a>
-        <a style="text-decoration:none;" asp-action="Patient" asp-controller="GBV">
-        <div class="card border-0">
-        <div class="card-body">
-        GBV
-        </div>
-        </div>
-        </a>
-        *@
-        </div>
-    </div>
-}
 
 
 

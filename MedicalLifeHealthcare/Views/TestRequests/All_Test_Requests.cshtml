@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.TestRequest>
+
+@{
+    ViewData["ViewTitle"] = "List of Test Requests";
+    ViewData["Description"] = "List of all Test Request made by Nurse";
+    ViewData["Title"] = "All_Test_Requests";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Full Names
+            </th>
+            <th>
+                Clinician Information
+            </th>
+            <th>
+                Request Date
+            </th>
+            <th>
+                Test Name
+            </th>
+            <th>
+                Instructions
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TestRequest item in ViewBag.Test)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.FirstName)  @Html.DisplayFor(modelItem => item.Patient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clinician.FirstName)  @Html.DisplayFor(modelItem => item.Clinician.LastName)
+                </td>
+                <td>
+                    @item.RequestDate.ToString("dd/MMMM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                        <a class="btn btn-primary" asp-controller="Samples" asp-action="All_Samples" asp-route-id="@item.TestRequestId">View Samples</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>table>

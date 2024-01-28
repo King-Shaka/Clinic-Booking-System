@@ -1,0 +1,137 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Que>
+
+@{
+    ViewData["ViewTitle"] = "Patient's Queue Management";
+    ViewData["Description"] = "List of all Queued Appointments";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WalkIn.cshtml";
+}
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clinician)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateOFQue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Appointments.Reason)
+                </td>
+                <td>
+                    @item.Clinician.FirstName  @item.Clinician.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dateOFQue)
+                </td>
+             
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @if (item.Status == "Called In")
+                    {
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Close-@item.AppointmentID">
+                            Close Que
+                        </button>
+                        <div class="modal fade" id="Close-@item.AppointmentID" tabindex="-1" aria-labelledby="Close-@item.AppointmentID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Close-@item.AppointmentID">Done with appointment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+
+                                                <lord-icon src="https://cdn.lordicon.com/jvihlqtw.json"
+                                                           trigger="loop"
+                                                           delay="500"
+                                                           colors="primary:#121331,secondary:#0008ff"
+                                                           style="width:250px;height:250px">
+                                                </lord-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-primary" asp-action="Done" asp-route-id="@item.QueID">Done</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (item.Status == "On Que")
+                    {
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Call-@item.AppointmentID">
+                            Call Next
+                        </button>
+                        <div class="modal fade" id="Call-@item.AppointmentID" tabindex="-1" aria-labelledby="Call-@item.AppointmentID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Call-@item.AppointmentID">Call out the Patient</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h4 class="text-center">Cut waiting time and call out the Patient</h4>
+                                                <lord-icon src="https://cdn.lordicon.com/kbtmbyzy.json"
+                                                           trigger="loop"
+                                                           delay="2000"
+                                                           colors="primary:#121331,secondary:#08a88a"
+                                                           style="width:250px;height:250px">
+                                                </lord-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-primary" asp-action="Notify" asp-route-id="@item.QueID">Notify the patient</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model MedicalLifeHealthcare.Models.Samples
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Samples</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRequest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TestRequest.TestRequestId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CollectionDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CollectionDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CollectorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CollectorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CollectionLocation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CollectionLocation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CollectionMethod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CollectionMethod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SampleContainerNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SampleContainerNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SampleCollectionId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

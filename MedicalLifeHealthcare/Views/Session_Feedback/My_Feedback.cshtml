@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Session_Feedback>
+
+@{
+    ViewData["Title"] = "My_Feedback";
+    Layout = "~/Views/Shared/_Counselling.cshtml";
+}
+
+<h1>My_Feedback</h1>
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Session.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Session.SessionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackDate)
+            </th>
+            <th>
+               Counsellor Feedback
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Satus)
+            </th>
+       
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Session.SessionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Session.SessionTime)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeedbackDate)
+                </td>
+                <th>
+                    @if(item.Counsellor_Feedback == null)
+                    {
+                        <p class="text-center">Not Answered</p>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Counsellor_Feedback)
+                    }
+                 
+                </th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Satus)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>

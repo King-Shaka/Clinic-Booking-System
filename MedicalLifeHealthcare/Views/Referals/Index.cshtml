@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Referal>
+
+@{
+    ViewData["ViewTitle"] = "List of case referals";
+    ViewData["Description"] = "List of all case Referals made by docotor";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.incidentReport.Patient.FirstName) 
+                @Html.DisplayNameFor(model => model.CaseInfor.incidentReport.Patient.LastName) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.DateOpened)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.Status)
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.ReferallType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.incidentReport.Patient.FirstName)   @Html.DisplayFor(modelItem => item.CaseInfor.incidentReport.Patient.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseInfor.DateOpened)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseInfor.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferallType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.SampleResults>
+
+@{
+    ViewData["ViewTitle"] = "Test Result";
+    ViewData["Description"] = "Test Result Information for specific Sample";
+    ViewData["Title"] = "Test Result";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Samples)
+            </th>
+            <th>
+               Request Date
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResultDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResultValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReferenceRange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitOfMeasure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Interpretation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pathology)
+            </th>
+ 
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Samples.SampleContainerNumber)
+            </td>
+                <td>
+                    @item.Samples.TestRequest.RequestDate.ToString("dd/MMMM/yyyy")
+                </td>
+            <td>
+                    @item.ResultDate.ToString("dd/MMMM/yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResultValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferenceRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitOfMeasure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interpretation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pathology.FirstName)
+                @Html.DisplayFor(modelItem => item.Pathology.LastName)
+            </td>
+     
+        </tr>
+}
+    </tbody>
+</table>

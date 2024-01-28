@@ -42,6 +42,14 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(enpoint =>
+{
+    enpoint.MapControllerRoute(
+        name: "PatinetFile",
+        pattern: "/Medical_File/Patient_File/{ID}",
+        defaults: new {controller = "Medical_File", action = "Patient_File" }
+        );
+});
 
 app.MapRazorPages();
 
@@ -54,7 +62,7 @@ using (var scope = app.Services.CreateScope())
 
     scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    var roles = new[] { "Admin", "Nurse", "Doctor", "Counsellor", "Pathology","Patient" };
+    var roles = new[] { "Admin", "Nurse", "Doctor", "Counsellor", "Pathology","Patient", "Social Worker" };
 
     foreach (var role in roles)
     {
@@ -95,7 +103,146 @@ using (var scope = app.Services.CreateScope())
         if (!hasRole)
         {
             //if teh user doesnt has a role we assign the role of the admin
-            await userManager.AddToRoleAsync(admin, "A");
+            await userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
+
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager =
+
+    scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string firstName = "Danny";
+    string lastName = "Morgan";
+    string email = "Morgan.enompilo.healthcare@gmail.com";
+    string password = "Morgan@2023";
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new ApplicationUser();
+        user.FirstName = firstName; user.LastName = lastName;
+        user.UserName = email;
+        user.Email = email;
+        user.EmailConfirmed = true;
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Doctor");
+    }
+    //hcek if the user has  role ad assign it to them if the dont have/
+    else
+    {
+        //get the ID of the user to ch
+        var admin = await userManager.FindByEmailAsync(email);
+        //check if theadmin has role
+        var hasRole = await userManager.IsInRoleAsync(admin, "Doctor");
+        if (!hasRole)
+        {
+			//if teh user doesnt has a role we assign the role of the Nurse
+			await userManager.AddToRoleAsync(admin, "Doctor");
+        }
+    }
+
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager =
+
+    scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string firstName = "Jackob";
+    string lastName = "Jackson";
+    string email = "Jackob.enompilo.healthcare@gmail.com";
+    string password = "Jackob@2023";
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new ApplicationUser();
+        user.FirstName = firstName; user.LastName = lastName;
+        user.UserName = email;
+        user.Email = email;
+        user.EmailConfirmed = true;
+
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Counsellor");
+    }
+    //hcek if the user has  role ad assign it to them if the dont have/
+    else
+    {
+        //get the ID of the user to ch
+        var admin = await userManager.FindByEmailAsync(email);
+        //check if theadmin has role
+        var hasRole = await userManager.IsInRoleAsync(admin, "Counsellor");
+        if (!hasRole)
+        {
+            //if teh user doesnt has a role we assign the role of the admin
+            await userManager.AddToRoleAsync(admin, "Counsellor");
+        }
+    }
+
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager =
+
+    scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string firstName = "Janny";
+    string lastName = "Maja";
+    string email = "Janny.enompilo.healthcare@gmail.com";
+    string password = "Janny@2023";
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new ApplicationUser();
+        user.FirstName = firstName; user.LastName = lastName;
+        user.UserName = email;
+        user.Email = email;
+        user.EmailConfirmed = true;
+
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Nurse");
+    }
+    //if the user has  role ad assign it to them if the dont have
+    else
+    {
+        //get the ID of the user to ch
+        var admin = await userManager.FindByEmailAsync(email);
+        //check if theadmin has role
+        var hasRole = await userManager.IsInRoleAsync(admin, "Nurse");
+        if (!hasRole)
+        {
+            //if teh user doesnt has a role we assign the role of the admin
+            await userManager.AddToRoleAsync(admin, "Nurse");
+        }
+    }
+
+}using (var scope = app.Services.CreateScope())
+{
+    var userManager =
+
+    scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string firstName = "Moses";
+    string lastName = "Maja";
+    string email = "Moses.enompilo.healthcare@gmail.com";
+    string password = "Moses@2023";
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new ApplicationUser();
+        user.FirstName = firstName; user.LastName = lastName;
+        user.UserName = email;
+        user.Email = email;
+        user.EmailConfirmed = true;
+
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Pathology");
+    }
+    //if the user has  role ad assign it to them if the dont have
+    else
+    {
+        //get the ID of the user to ch
+        var admin = await userManager.FindByEmailAsync(email);
+        //check if theadmin has role
+        var hasRole = await userManager.IsInRoleAsync(admin, "Pathology");
+        if (!hasRole)
+        {
+            //if teh user doesnt has a role we assign the role of the admin
+            await userManager.AddToRoleAsync(admin, "Pathology");
         }
     }
 

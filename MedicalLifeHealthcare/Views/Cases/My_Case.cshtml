@@ -1,0 +1,63 @@
+﻿@model MedicalLifeHealthcare.Models.Referal
+@using MedicalLifeHealthcare.Models
+@{
+    ViewData["ViewTitle"] = "List My of Gbv Cases";
+    ViewData["Description"] = "List of My gbv Cases";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Doctor Information
+            </th>
+            <th>
+                Type of GBV
+            </th>
+            <th>
+                DateOpened
+            </th>
+
+            <th>
+                Doctor
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Status
+            </th>
+     
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Case item in ViewBag.List)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.FirstName) @Html.DisplayFor(modelItem => item.Doctor.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.incidentReport.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOpened)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.FirstName) @Html.DisplayFor(modelItem => item.Doctor.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

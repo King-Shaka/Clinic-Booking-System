@@ -17,7 +17,7 @@ namespace MedicalLifeHealthcare.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.21")
+                .HasAnnotation("ProductVersion", "6.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -42,12 +42,10 @@ namespace MedicalLifeHealthcare.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
@@ -56,6 +54,9 @@ namespace MedicalLifeHealthcare.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<byte[]>("MyPicture")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -97,7 +98,143 @@ namespace MedicalLifeHealthcare.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.ChronicMedication", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Alert", b =>
+                {
+                    b.Property<int>("AlertId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AlertId"), 1L, 1);
+
+                    b.Property<string>("IntendedUser")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Purpose")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("AlertId");
+
+                    b.HasIndex("IntendedUser");
+
+                    b.ToTable("Alerts");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Appointments", b =>
+                {
+                    b.Property<int>("AppointmentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentID"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Date_Time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PatientID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppointmentID");
+
+                    b.HasIndex("PatientID");
+
+                    b.ToTable("Appointments");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Case", b =>
+                {
+                    b.Property<int>("CaseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CaseId"), 1L, 1);
+
+                    b.Property<DateTime>("DateOpened")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DoctorsID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("IncidentReportId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("CaseId");
+
+                    b.HasIndex("DoctorsID");
+
+                    b.HasIndex("IncidentReportId");
+
+                    b.ToTable("Case");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Counselling_Sessions", b =>
+                {
+                    b.Property<int>("SessionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SessionID"), 1L, 1);
+
+                    b.Property<int?>("AppointemtID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CounsellorID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SessionCreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("SessionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("SessionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SessionID");
+
+                    b.HasIndex("AppointemtID");
+
+                    b.HasIndex("CounsellorID");
+
+                    b.ToTable("Counselling_Sessions");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.IncidentReport", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -105,7 +242,263 @@ namespace MedicalLifeHealthcare.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("ActionsTaken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("InciodentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ReportDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientID");
+
+                    b.ToTable("IncidentReport");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_Feedback", b =>
+                {
+                    b.Property<int>("FeedbackID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackID"), 1L, 1);
+
+                    b.Property<DateTime?>("AnsweredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DoctorsFeedback")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DoctorsID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Feedback")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FeedbackDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PatientID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("PrescresptionID")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("FeedbackID");
+
+                    b.HasIndex("DoctorsID");
+
+                    b.HasIndex("PatientID");
+
+                    b.HasIndex("PrescresptionID");
+
+                    b.ToTable("Medical_Feedback");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_File", b =>
+                {
+                    b.Property<int>("FileID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FileID"), 1L, 1);
+
+                    b.Property<string>("AddressLine1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Allergies")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AnySurgeries")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("BloodType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmergencyContactNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmergencyPerson")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ExtraNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("IDNumber")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
+
+                    b.Property<string>("PatientID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Relationship")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FileID");
+
+                    b.HasIndex("PatientID");
+
+                    b.ToTable("Medical_File");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_Records", b =>
+                {
+                    b.Property<int>("RecordsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecordsID"), 1L, 1);
+
+                    b.Property<decimal?>("BloodPressure")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CurrentMedications")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FileID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HeartRate")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Height")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NurseID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("RecordDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Temperature")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("Weight")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("RecordsID");
+
+                    b.HasIndex("FileID");
+
+                    b.HasIndex("NurseID");
+
+                    b.ToTable("Medical_Records");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.MedicalRefill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("ApprovalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DoctorsID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("PrescriptionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantityRequested")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorsID");
+
+                    b.HasIndex("PatientID");
+
+                    b.HasIndex("PrescriptionId");
+
+                    b.ToTable("MedicalRefill");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Prescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("DatePrescribed")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DoctorsID")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Dosage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Duration")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -113,395 +506,236 @@ namespace MedicalLifeHealthcare.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ChronicMedicationTB");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.Counselling", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("FollowUpDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FollowUpNotes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCompleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsFollowUpRequired")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PatientContact")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PatientName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("SessionDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SessionNotes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TherapistContact")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TherapistName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CounsellingTB");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.Appointment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("CounsellorPatientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CounselorId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsConfirmed")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PatientId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CounsellorPatientId");
-
-                    b.HasIndex("CounselorId");
+                    b.HasIndex("DoctorsID");
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("AppointmentTB");
+                    b.ToTable("Prescription");
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.CounsellorPatient", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Que", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("QueID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QueID"), 1L, 1);
 
-                    b.Property<string>("Address")
+                    b.Property<int>("AppointmentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClinicianID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoomNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MedicalHistory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CounsellorPatientTB");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.Counselor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Bio")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Education")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LanguagesSpoken")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LicenseNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OfficeAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProfileImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Specialization")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("YearsOfExperience")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CounselorTB");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.SessionBooking", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AppointmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SessionTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppointmentId");
-
-                    b.HasIndex("SessionTypeId");
-
-                    b.ToTable("SessionBooking");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.SessionType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SessionType");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.GBVReport", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("IncidentDetails")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PerpetratorName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ReportDate")
+                    b.Property<DateTime>("dateOFQue")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VictimName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("QueID");
 
-                    b.HasKey("Id");
+                    b.HasIndex("AppointmentID");
 
-                    b.ToTable("GBVReportTB");
+                    b.HasIndex("ClinicianID");
+
+                    b.ToTable("Que");
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.Labs", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Referal", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ReferalId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReferalId"), 1L, 1);
 
-                    b.Property<string>("ResultDetails")
+                    b.Property<int>("CaseID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DoctorID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReferallType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TestId")
-                        .HasColumnType("int");
+                    b.HasKey("ReferalId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("CaseID");
 
-                    b.ToTable("LabTB");
+                    b.HasIndex("DoctorID");
+
+                    b.ToTable("Referal");
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.Patient", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.SampleResults", b =>
                 {
-                    b.Property<int>("patientID")
+                    b.Property<int>("SampleResultsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("patientID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SampleResultsId"), 1L, 1);
 
-                    b.Property<DateTime>("AdmissionTime")
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Interpretation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PathologyID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ReferenceRange")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ResultDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DOB")
+                    b.Property<string>("ResultValue")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MedicalHistory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MyProperty")
+                    b.Property<int>("SamplesID")
                         .HasColumnType("int");
-
-                    b.Property<string>("MyProperty1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PrescriptionHistory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("patientID");
-
-                    b.ToTable("PatientTB");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.Tests", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TestDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("TestName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("UnitOfMeasure")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("TestTB");
+                    b.HasKey("SampleResultsId");
+
+                    b.HasIndex("PathologyID");
+
+                    b.HasIndex("SamplesID");
+
+                    b.ToTable("SampleResults");
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.Walkins", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Samples", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SampleCollectionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SampleCollectionId"), 1L, 1);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RegistrationDate")
+                    b.Property<DateTime?>("CollectionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Symptoms")
+                    b.Property<string>("CollectionLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CollectionMethod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CollectorName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("SampleContainerNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TestRequestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SampleCollectionId");
+
+                    b.HasIndex("CollectorName");
+
+                    b.HasIndex("TestRequestId");
+
+                    b.ToTable("Samples");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Session_Feedback", b =>
+                {
+                    b.Property<int>("FeedbackID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackID"), 1L, 1);
+
+                    b.Property<string>("Counsellor_Feedback")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Feedback")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<DateTime?>("FeedbackDate")
+                        .HasColumnType("datetime2");
 
-                    b.ToTable("WalkinTB");
+                    b.Property<string>("Satus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SessionID")
+                        .HasColumnType("int");
+
+                    b.HasKey("FeedbackID");
+
+                    b.HasIndex("SessionID");
+
+                    b.ToTable("Session_Feedback");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.TestRequest", b =>
+                {
+                    b.Property<int>("TestRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestRequestId"), 1L, 1);
+
+                    b.Property<string>("Instructions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RequestedBy")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TestName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TestRequestId");
+
+                    b.HasIndex("PatientId");
+
+                    b.HasIndex("RequestedBy");
+
+                    b.ToTable("TestRequest");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -641,46 +875,246 @@ namespace MedicalLifeHealthcare.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.Appointment", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Alert", b =>
                 {
-                    b.HasOne("MedicalLifeHealthcare.Models.CounsellingModels.CounsellorPatient", null)
-                        .WithMany("Appointments")
-                        .HasForeignKey("CounsellorPatientId");
-
-                    b.HasOne("MedicalLifeHealthcare.Models.CounsellingModels.Counselor", "Counselor")
-                        .WithMany("Appointments")
-                        .HasForeignKey("CounselorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MedicalLifeHealthcare.Models.Patient", "Patient")
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "CurrentUser")
                         .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IntendedUser");
 
-                    b.Navigation("Counselor");
-
-                    b.Navigation("Patient");
+                    b.Navigation("CurrentUser");
                 });
 
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.SessionBooking", b =>
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Appointments", b =>
                 {
-                    b.HasOne("MedicalLifeHealthcare.Models.CounsellingModels.Appointment", "Appointment")
-                        .WithMany("SessionBookings")
-                        .HasForeignKey("AppointmentId")
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "MainUser")
+                        .WithMany()
+                        .HasForeignKey("PatientID");
+
+                    b.Navigation("MainUser");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Case", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorsID");
+
+                    b.HasOne("MedicalLifeHealthcare.Models.IncidentReport", "incidentReport")
+                        .WithMany()
+                        .HasForeignKey("IncidentReportId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MedicalLifeHealthcare.Models.CounsellingModels.SessionType", "SessionType")
+                    b.Navigation("Doctor");
+
+                    b.Navigation("incidentReport");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Counselling_Sessions", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Models.Appointments", "Appointment")
                         .WithMany()
-                        .HasForeignKey("SessionTypeId")
+                        .HasForeignKey("AppointemtID");
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Counsellor")
+                        .WithMany()
+                        .HasForeignKey("CounsellorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Appointment");
 
-                    b.Navigation("SessionType");
+                    b.Navigation("Counsellor");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.IncidentReport", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientID");
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_Feedback", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorsID");
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientID");
+
+                    b.HasOne("MedicalLifeHealthcare.Models.Prescription", "Prescription")
+                        .WithMany()
+                        .HasForeignKey("PrescresptionID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+
+                    b.Navigation("Prescription");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_File", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "mainUser")
+                        .WithMany()
+                        .HasForeignKey("PatientID");
+
+                    b.Navigation("mainUser");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Medical_Records", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Models.Medical_File", "File")
+                        .WithMany()
+                        .HasForeignKey("FileID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Nurse")
+                        .WithMany()
+                        .HasForeignKey("NurseID");
+
+                    b.Navigation("File");
+
+                    b.Navigation("Nurse");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.MedicalRefill", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorsID");
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientID");
+
+                    b.HasOne("MedicalLifeHealthcare.Models.Prescription", "Prescription")
+                        .WithMany()
+                        .HasForeignKey("PrescriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+
+                    b.Navigation("Prescription");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Prescription", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorsID");
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId");
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Que", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Models.Appointments", "Appointments")
+                        .WithMany()
+                        .HasForeignKey("AppointmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Clinician")
+                        .WithMany()
+                        .HasForeignKey("ClinicianID");
+
+                    b.Navigation("Appointments");
+
+                    b.Navigation("Clinician");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Referal", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Models.Case", "CaseInfor")
+                        .WithMany()
+                        .HasForeignKey("CaseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorID");
+
+                    b.Navigation("CaseInfor");
+
+                    b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.SampleResults", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Pathology")
+                        .WithMany()
+                        .HasForeignKey("PathologyID");
+
+                    b.HasOne("MedicalLifeHealthcare.Models.Samples", "Samples")
+                        .WithMany()
+                        .HasForeignKey("SamplesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pathology");
+
+                    b.Navigation("Samples");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Samples", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Nurse")
+                        .WithMany()
+                        .HasForeignKey("CollectorName");
+
+                    b.HasOne("MedicalLifeHealthcare.Models.TestRequest", "TestRequest")
+                        .WithMany()
+                        .HasForeignKey("TestRequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Nurse");
+
+                    b.Navigation("TestRequest");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.Session_Feedback", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Models.Counselling_Sessions", "Session")
+                        .WithMany()
+                        .HasForeignKey("SessionID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Session");
+                });
+
+            modelBuilder.Entity("MedicalLifeHealthcare.Models.TestRequest", b =>
+                {
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId");
+
+                    b.HasOne("MedicalLifeHealthcare.Areas.Identity.Data.ApplicationUser", "Clinician")
+                        .WithMany()
+                        .HasForeignKey("RequestedBy");
+
+                    b.Navigation("Clinician");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -732,21 +1166,6 @@ namespace MedicalLifeHealthcare.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.Appointment", b =>
-                {
-                    b.Navigation("SessionBookings");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.CounsellorPatient", b =>
-                {
-                    b.Navigation("Appointments");
-                });
-
-            modelBuilder.Entity("MedicalLifeHealthcare.Models.CounsellingModels.Counselor", b =>
-                {
-                    b.Navigation("Appointments");
                 });
 #pragma warning restore 612, 618
         }

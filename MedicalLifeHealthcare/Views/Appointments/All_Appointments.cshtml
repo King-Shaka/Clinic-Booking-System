@@ -1,0 +1,253 @@
+﻿@using MedicalLifeHealthcare.Areas.Identity.Data;
+@using MedicalLifeHealthcare.Models
+@model MedicalLifeHealthcare.Models.Appointment_QueVM
+@{
+    ViewData["ViewTitle"] = "List of appointments";
+    ViewData["Description"] = "All Appointments for all patients";
+    ViewData["Title"] = "All_Appointments";
+    Layout = "~/Views/Shared/_WalkIn.cshtml";
+}
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+    <a class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New Appointment</a>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Appointment For a Patient</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <partial name="/Views/Appointments/Create_Partial.cshtml" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Information
+            </th>
+            <th>
+                Appointment Date and Time
+            </th>
+            <th>
+                Reason for Appointment
+            </th>
+            <th>
+                Status
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Appointments item in ViewBag.appoint)
+        {
+            <tr>
+                <td>
+                    @item.MainUser.FirstName
+                    @item.MainUser.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                @if (item.Status == "New")
+                {
+                    <td>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.AppointmentID">
+                            Accept
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Post-@item.AppointmentID">
+                            Postpone
+                        </button>
+
+                    </td>
+                    <!-- Button trigger modal -->
+                    <div class="modal fade" id="exampleModal-@item.AppointmentID" tabindex="-1" aria-labelledby="exampleModalLabel-@item.AppointmentID" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel-@item.AppointmentID">Confirmation of Acceptance</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="~/images/appprove.png" class="rounded mx-auto d-block" style="width:200px" />
+                                    <h5 class="text-center">Confirm to Accept the Appointment</h5>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <a asp-action="Accept" asp-route-id="@item.AppointmentID" type="button" class="btn btn-success">Accept</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="Post-@item.AppointmentID" tabindex="-1" aria-labelledby="Post-@item.AppointmentID" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="Post-@item.AppointmentID">Postpone Appointment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form asp-action="Edit">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <input hidden value="@item.AppointmentID" asp-for="AppointmentID" />
+                                                <div class="form-group">
+                                                    <label asp-for="Date_Time" class="control-label">New Date and Time</label>
+                                                    <input asp-for="Date_Time" class="form-control" />
+                                                    <span asp-validation-for="Date_Time" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Postpone" class="btn btn-primary" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                }
+                else if (item.Status == "Accepted")
+                {
+                    <td>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Que-@item.AppointmentID">
+                            Que
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Post-@item.AppointmentID">
+                            Postpone
+                        </button>
+                        <div class="modal fade" id="Post-@item.AppointmentID" tabindex="-1" aria-labelledby="Post-@item.AppointmentID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Post-@item.AppointmentID">Postpone Appointment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form asp-action="Edit">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                    <input hidden value="@item.AppointmentID" asp-for="AppointmentID" />
+                                                    <div class="form-group">
+                                                        <label asp-for="Date_Time" class="control-label">New Date and Time</label>
+                                                        <input asp-for="Date_Time" class="form-control" />
+                                                        <span asp-validation-for="Date_Time" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Postpone" class="btn btn-primary" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="Que-@item.AppointmentID" tabindex="-1" aria-labelledby="Que-@item.AppointmentID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Que-@item.AppointmentID">Que Appointment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form asp-action="Create" asp-controller="Ques">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                    <input hidden value="@item.AppointmentID" asp-for="AppointmentID" />
+                                                    <div class="form-group">
+                                                        <label asp-for="Time" class="control-label"></label>
+                                                        <input asp-for="Time" class="form-control" />
+                                                        <span asp-validation-for="Time" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="RoomNumber" class="control-label"></label>
+                                                        <input asp-for="RoomNumber" class="form-control" />
+                                                        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="ClinicianID" class="control-label">Select clinician</label>
+                                                        <select asp-for="ClinicianID" class="form-control">
+                                                            @foreach (ApplicationUser user in ViewBag.Clinic)
+                                                            {
+                                                                <option value="@user.Id">@user.FirstName @user.LastName </option>
+                                                            }
+                                                        </select>
+                                                        <span asp-validation-for="ClinicianID" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Que Appointment" class="btn btn-primary" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+
+                }
+                else if (item.Status == "Done")
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AppointmentID">Delete</a> |
+                        <a asp-action="Details" asp-route-id="@item.AppointmentID">View More</a> |
+
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>

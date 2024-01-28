@@ -1,0 +1,106 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Samples>
+
+@{
+    ViewData["ViewTitle"] = "List of Samples";
+    ViewData["Description"] = "Samples created under specific Test Request";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Information
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SampleContainerNumber)
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.TestRequest.Patient.FirstName
+                @item.TestRequest.Patient.LastName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SampleContainerNumber)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestRequest.Status)
+                </td>
+            <td>
+                    @if (item.TestRequest.Status == "Pending")
+                    {
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Delete
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <h5 class="modal-title" id="exampleModalLabel">Deleting then sample Information</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+                                        <lord-icon src="https://cdn.lordicon.com/vhypyykg.json"
+                                                   trigger="loop"
+                                                   delay="2000"
+                                                   colors="primary:#c71f16,secondary:#c71f16"
+                                                   style="width:250px;height:250px">
+                                        </lord-icon>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.SampleCollectionId">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (item.TestRequest.Status == "Test Done")
+                    {
+                        <a class="btn btn-success" asp-controller="SampleResults" asp-action="My_Results" asp-route-id="@item.SampleCollectionId">View Results</a>
+                    }
+                 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,127 @@
+﻿@using MedicalLifeHealthcare.Areas.Identity.Data;
+@using MedicalLifeHealthcare.Models
+@model MedicalLifeHealthcare.Models.MedicalRefill
+@{
+    ViewData["ViewTitle"] = "Patient's Dashboard";
+    ViewData["Description"] = "Summary of of Patient's functionalities";
+    ViewData["Title"] = "Patient";
+    Layout = "~/Views/Shared/_Chronic.cshtml";
+}
+
+<section class="section">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Appointments</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Medical Files</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Prescriptions</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Refills</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h5 class="text-center">List  of my prescriptions</h5>
+<table id="REeport" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Doctor Information
+            </th>
+            <th>
+                Medication Name
+            </th>
+            <th>
+                Dosage
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Date of prescription
+            </th>
+
+         
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Prescription item in ViewBag.Pre)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.FirstName)
+                    @Html.DisplayFor(modelItem => item.Doctor.LastName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dosage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatePrescribed)
+                </td>
+             
+            </tr>
+        }
+    </tbody>
+</table>

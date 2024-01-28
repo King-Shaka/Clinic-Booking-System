@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Referal>
+
+@{
+    ViewData["ViewTitle"] = "My case referals";
+    ViewData["Description"] = "My case Referals made by docotor";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+               Doctor full names
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.DateOpened)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseInfor.Status)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ReferallType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Doctor.FirstName)
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Doctor.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.DateOpened)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseInfor.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferallType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                
+
+            </tr>
+        }
+    </tbody>
+</table>

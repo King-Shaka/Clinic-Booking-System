@@ -284,6 +284,15 @@ C:\Users\User\source\repos\GRP-03-41\MedicalLifeHealthcare\MedicalLifeHealthcare
 C:\Users\User\source\repos\GRP-03-41\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\User\source\repos\GRP-03-41\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\User\source\repos\GRP-03-41\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.csproj.AssemblyReference.cache
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.GeneratedMSBuildEditorConfig.editorconfig
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.AssemblyInfoInputs.cache
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.AssemblyInfo.cs
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.csproj.CoreCompileInputs.cache
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.MvcApplicationPartsAssemblyInfo.cs
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.MvcApplicationPartsAssemblyInfo.cache
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.RazorAssemblyInfo.cache
+D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.RazorAssemblyInfo.cs
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\appsettings.Development.json
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\appsettings.json
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\MedicalLifeHealthcare.staticwebassets.runtime.json
@@ -545,15 +554,6 @@ D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHeal
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.csproj.AssemblyReference.cache
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.GeneratedMSBuildEditorConfig.editorconfig
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.AssemblyInfoInputs.cache
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.AssemblyInfo.cs
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.csproj.CoreCompileInputs.cache
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.MvcApplicationPartsAssemblyInfo.cs
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.MvcApplicationPartsAssemblyInfo.cache
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.RazorAssemblyInfo.cache
-D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\MedicalLifeHealthcare.RazorAssemblyInfo.cs
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\staticwebassets\msbuild.MedicalLifeHealthcare.Microsoft.AspNetCore.StaticWebAssets.props
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\staticwebassets\msbuild.build.MedicalLifeHealthcare.props
 D:\3rd Year Projects\MedicalLifeHealthcare\MedicalLifeHealthcare\MedicalLifeHealthcare\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MedicalLifeHealthcare.props

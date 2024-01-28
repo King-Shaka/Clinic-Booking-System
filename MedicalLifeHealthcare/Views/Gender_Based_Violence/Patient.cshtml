@@ -1,0 +1,128 @@
+﻿@using MedicalLifeHealthcare.Models
+@model MedicalLifeHealthcare.Models.IncidentReport
+@{
+    ViewData["ViewTitle"] = "Patinet's GBV Dahsboard";
+    ViewData["Title"] = "Patient";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+<section class="section">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Appointments</h3>
+                            <div class="card-right d-flex align-items-center">
+                       
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Incidents Reported</h3>
+                            <div class="card-right d-flex align-items-center">
+                            
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Cases</h3>
+                            <div class="card-right d-flex align-items-center">
+                          
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Referrals</h3>
+                            <div class="card-right d-flex align-items-center">
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h3 class="text-center">List of my reported gbv incidents</h3>
+<table id="REeport" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportDate)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InciodentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionsTaken)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (IncidentReport item in ViewBag.Rep)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportDate)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InciodentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionsTaken)
+                </td>
+                <td>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

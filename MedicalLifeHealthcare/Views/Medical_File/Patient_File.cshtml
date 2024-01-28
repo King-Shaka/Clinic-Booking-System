@@ -1,0 +1,308 @@
+﻿@using MedicalLifeHealthcare.Models
+@using Microsoft.AspNetCore.Identity
+@using MedicalLifeHealthcare.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["ViewTitle"] = "Patient Medical File";
+    ViewData["Description"] = "Comprehensive Medical Files: Journey to Better Health.";
+    Layout = "~/Views/Shared/_WalkIn.cshtml";
+}
+<style>
+    body {
+        background: #f7f7ff;
+        margin-top: 20px;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid transparent;
+        border-radius: .25rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+    }
+
+    .me-2 {
+        margin-right: .5rem !important;
+    }
+</style>
+
+@foreach (Medical_File item in ViewBag.MyFile)
+{
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a asp-action="Create" asp-controller="Medical_Records" asp-route-id="@item.FileID" class="btn btn-primary"><i class="bi bi-file-earmark-richtext"></i> Add Medical Record</a>
+       
+    </div>
+    <div class="container ">
+        <div class="main-body mt-3 ">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                @if (@item.mainUser.MyPicture != null)
+                                {
+                                    <a asp-area="Identity" asp-page="/Account/Manage/Index"><img class="rounded-circle p-1 bg-primary" style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="data:image/*;base64,@(Convert.ToBase64String(UserManager.GetUserAsync(User).Result.MyPicture))"></a>
+                                    <div class="mt-3">
+                                        <h4>@item.mainUser.FirstName @item.mainUser.LastName</h4>
+                                        <p class="text-muted font-size-sm">@item.AddressLine1, @item.Province, @item.Country</p>
+                                        
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <img src="~/images/user.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                                    <div class="mt-3">
+                                        <h4>@item.mainUser.FirstName @item.mainUser.LastName</h4>
+
+                                        <p class="text-muted font-size-sm">@item.AddressLine1, @item.Province, @item.Country</p>
+                                       
+
+                                    </div>
+                                }
+
+
+                            </div>
+                            <hr class="my-4">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Full Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input disabled type="text" class="form-control" value="@item.mainUser.FirstName @item.mainUser.LastName">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Id Number</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input  disabled type="text" class="form-control" value="@item.IDNumber">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Gender</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input disabled type="text" class="form-control" value="@item.Gender">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input disabled type="text" class="form-control" value="@item.mainUser.Email">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Phone</h6>
+                                </div>
+                                @if (@item.mainUser.PhoneNumber == null)
+                                {
+                                    <div class="col-sm-9 text-secondary">
+                                        <input disabled type="text" class="form-control" placeholder="Add Phone Number">
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-9 text-secondary">
+                                        <input disabled type="text" class="form-control" value="@item.mainUser.PhoneNumber">
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+                                    <button class="btn btn-primary" type="button">Edit Medical File</button>
+                                </div>
+                                <h5 class=" align-items-center mb-3">Medical Infomartion</h5>
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label class="control-label">Blood Type</label>
+                                        <input disabled value="@item.BloodType" class="form-control" />
+
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="control-label">Allergies</label>
+                                        <input disabled value="@item.Allergies" class="form-control" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">AnySurgeries</label>
+                                    <input disabled value="@item.AnySurgeries" class="form-control" />
+
+                                </div>
+                                <div class="form-group">
+                                    <label a class="control-label">Extra Notes</label>
+                                    <input disabled value="@item.ExtraNotes" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class=align-items-center mb-3">Emergency Person Infomartion</h5>
+                                <div>
+                                    <div class="form-group">
+                                        <label class="control-label"> Full Names <strong><span class="text-danger text-end"></span></strong></label>
+                                        <input disabled value="@item.EmergencyPerson" class="form-control" />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Contact number <strong><span class="text-danger text-end"> *</span></strong></label>
+                                        <input disabled  value="@item.EmergencyContactNo" class="form-control" />
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Reletionship <strong><span class="text-danger text-end"> *</span></strong></label>
+                                    <input disabled value="@item.Relationship" class="form-control" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+
+
+@* <div class="col-md-12">
+
+    <div class="row mt-3">
+        <div class="col-md-6 col-xl-6 col-sm-12 ">
+
+            <h4>Personal Information</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FileID" />
+            <div class="form-group">
+                <label asp-for="mainUser.FirstName" class="control-label"></label>
+                <input disabled asp-for="mainUser.FirstName" class="form-control" />
+                <span asp-validation-for="PatientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mainUser.LastName" class="control-label"></label>
+                <input disabled asp-for="mainUser.LastName" class="form-control" />
+                <span asp-validation-for="PatientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input disabled asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input disabled asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDNumber" class="control-label"></label>
+                <input disabled asp-for="IDNumber" class="form-control" />
+                <span asp-validation-for="IDNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressLine1" class="control-label"></label>
+                <input disabled asp-for="AddressLine1" class="form-control" />
+                <span asp-validation-for="AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Province" class="control-label"></label>
+                <input disabled asp-for="Province" class="form-control" />
+                <span asp-validation-for="Province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input disabled asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input disabled asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-6 col-sm-12 ">
+            <div class="form-group">
+                <label asp-for="EmergencyPerson" class="control-label"></label>
+                <input disabled asp-for="EmergencyPerson" class="form-control" />
+                <span asp-validation-for="EmergencyPerson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmergencyContactNo" class="control-label"></label>
+                <input disabled asp-for="EmergencyContactNo" class="form-control" />
+                <span asp-validation-for="EmergencyContactNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Relationship" class="control-label"></label>
+                <input disabled asp-for="Relationship" class="form-control" />
+                <span asp-validation-for="Relationship" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodType" class="control-label"></label>
+                <input disabled asp-for="BloodType" class="form-control" />
+                <span asp-validation-for="BloodType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Allergies" class="control-label"></label>
+                <input disabled asp-for="Allergies" class="form-control" />
+                <span asp-validation-for="Allergies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnySurgeries" class="control-label"></label>
+                <input disabled asp-for="AnySurgeries" class="form-control" />
+                <span asp-validation-for="AnySurgeries" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExtraNotes" class="control-label"></label>
+                <input disabled asp-for="ExtraNotes" class="form-control" />
+                <span asp-validation-for="ExtraNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <a asp-action="Edit" asp-route-id="@ViewBag.File" class="btn btn-warning">Edit File</a>| <a asp-action="Record" asp-controller="Medical_Records" asp-route-id="@ViewBag.File" class="btn btn-primry">View Medical Record</a>|
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div> *@
+

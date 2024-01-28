@@ -1,0 +1,118 @@
+﻿@using MedicalLifeHealthcare.Models
+
+@{
+    ViewData["Title"] = "My Sessions";
+    Layout = "~/Views/Shared/_Counselling.cshtml";
+}
+
+<div class="bg-primary ">
+    <h1 class="m-1 text-center text-white">Manage Sessions for Counselling</h1>
+</div>
+
+
+@if (TempData["Success"] != null)
+{
+    <div id="tempDataMessage" class="bg-success text-center text-white p-1">
+        <h3 class="text-center text-white">@TempData["Success"]</h3>
+    </div>
+}
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Counsellor Information
+            </th>
+            <th>
+                Session Date
+            </th>
+            <th>
+                Session Time
+            </th>
+            <th>
+                Appointment Date Created
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Status
+            </th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Counselling_Sessions item in ViewBag.Sessions)
+        {
+            <tr>
+                <td>
+                   @item.Counsellor.FirstName
+                   @item.Counsellor.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Appointment.CreatedAt)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    
+                    @if (item.Status == "Session Closed")
+                    {
+                        
+ 
+                        <button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.SessionID">
+                            Provide Feedback
+                        </button>
+                        <!-- Button trigger modal -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal-@item.SessionID" tabindex="-1" aria-labelledby="exampleModalLabel-@item.SessionID" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-center" id="exampleModalLabel-@item.SessionID">Close the session</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        @model MedicalLifeHealthcare.Models.Session_Feedback
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <form asp-controller="Session_Feedback" asp-action="Create">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                    <div class="form-group">
+                                                        <label hidden asp-for="SessionID" class="control-label"></label>
+                                                        <input hidden value="@item.SessionID" asp-for="SessionID" class="form-control" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="Feedback" class="control-label"></label>
+                                                        <input asp-for="Feedback" class="form-control" />
+                                                        <span asp-validation-for="Feedback" class="text-danger"></span>
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Add Feed" class="btn btn-primary" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    }
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

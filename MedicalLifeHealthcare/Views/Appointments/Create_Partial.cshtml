@@ -1,0 +1,78 @@
+﻿@model MedicalLifeHealthcare.Models.Appointments
+@using MedicalLifeHealthcare.Areas.Identity.Data;
+@if (User.IsInRole("Nurse"))
+{
+    <div class="row">
+        <div class="col-md-6 ">
+            <form asp-action="Create_Partial">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="PatientID" class="control-label">Choose Patient</label>
+                    <select asp-for="PatientID" class="form-control">
+                        @foreach (ApplicationUser item in ViewBag.Patients)
+                        {
+                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date_Time" class="control-label"></label>
+                    <input asp-for="Date_Time" class="form-control" />
+                    <span asp-validation-for="Date_Time" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Reason" class="control-label"></label>
+                    <select asp-for="Reason" class="form-control">
+
+                        <option value="Counselling">for Counselling</option>
+                        <option value="Chronic">for Chronic Medication</option>
+                        <option value="GBV">for Gender Based Violence</option>
+                        <option value="Pathology">for Labs and Testing</option>
+                    </select>
+                    <span asp-validation-for="Reason" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create Appointment" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img class="rounded mx-auto d-block" src="~/images/appointment-removebg-preview.png" style="width:150px" />
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+    <div class="col-md-6 ">
+        <form asp-action="Create_Partial">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date_Time" class="control-label"></label>
+                <input asp-for="Date_Time" class="form-control" />
+                <span asp-validation-for="Date_Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label"></label>
+                <select asp-for="Reason" class="form-control">
+
+                        <option value="Counselling">for Counselling</option>
+                    <option value="Chronic">for Chronic Medication</option>
+                    <option value="GBV">for Gender Based Violence</option>
+                    <option value="Pathology">for Labs and Testing</option>
+                </select>
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Appointment" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img class="rounded mx-auto d-block" src="~/images/appointment-removebg-preview.png" style="width:150px" />
+    </div>
+</div>
+}
+
+
+

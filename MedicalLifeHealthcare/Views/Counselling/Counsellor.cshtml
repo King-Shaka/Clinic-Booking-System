@@ -1,0 +1,119 @@
+﻿@using MedicalLifeHealthcare.Models
+@{
+    ViewData["ViewTitle"] = "Counsellor's Dahsboard";
+    ViewData["Title"] = "Counsellor";
+    Layout = "~/Views/Shared/_Counselling.cshtml";
+}
+
+<section class="section">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Appointments</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Medical Files</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Counselling Sessions</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-3 py-3 d-flex justify-content-between'>
+                            <h3 class='card-title'>Feedback</h3>
+                            <div class="card-right d-flex align-items-center">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h5 class="text-center">List of Counselling Sessions</h5>
+<table id="REeport" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Information
+            </th>
+            <th>
+                Appointment Date Created
+            </th>
+            <th>
+                Session Date
+            </th>
+            <th>
+                Session Time
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Counselling_Sessions item in ViewBag.Sessions)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Appointment.MainUser.FirstName) @Html.DisplayFor(modelItem => item.Appointment.MainUser.LastName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Appointment.CreatedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

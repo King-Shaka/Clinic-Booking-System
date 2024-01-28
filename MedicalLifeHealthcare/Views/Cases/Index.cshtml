@@ -1,0 +1,115 @@
+﻿@model MedicalLifeHealthcare.Models.Referal
+@using MedicalLifeHealthcare.Models
+@{
+    ViewData["ViewTitle"] = "List of Gbv Cases";
+    ViewData["Description"] = "List of all gbv Cases for patients";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Information
+            </th>
+            <th>
+                Type of GBV
+            </th>
+            <th>
+                DateOpened
+            </th>
+
+            <th>
+                Doctor
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Case item in ViewBag.List)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.incidentReport.Patient.FirstName) @Html.DisplayFor(modelItem => item.incidentReport.Patient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.incidentReport.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOpened)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.FirstName) @Html.DisplayFor(modelItem => item.Doctor.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.CaseId">
+                        Refere Case
+                    </button>
+                    <a class="btn btn-success" asp-action="index" asp-controller="Referals" asp-route-Id="@item.CaseId">view referal</a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal-@item.CaseId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.CaseId" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel-@item.CaseId">Refere the case</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12">
+                                        <form asp-controller="Referals" asp-action="Create">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <div class="form-group">
+                                               
+                                                <input hidden value="@item.CaseId" asp-for="CaseID" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="ReferallType" class="control-label"> Refere to: </label>
+                                                <select asp-for="ReferallType" class="form-control">
+                                                    <option value="Counselling">Counselling</option>
+                                                    <option value="Social Worker">Social Worker</option>
+                                                </select>
+                                                <span asp-validation-for="ReferallType" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Notes" class="control-label"></label>
+                                                <input asp-for="Notes" class="form-control" />
+                                                <span asp-validation-for="Notes" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Refere case" class="btn btn-primary" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

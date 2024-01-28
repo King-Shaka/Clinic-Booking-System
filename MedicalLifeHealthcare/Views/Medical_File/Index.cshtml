@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MedicalLifeHealthcare.Models.Medical_File>
+
+@{
+    ViewData["ViewTitle"] = "List of Medical File";
+    ViewData["Description"] = "All  Medical files for  patients";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WalkIn.cshtml";
+}
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+    <a class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New Medical File</a>
+</div>
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Full Names
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDNumber)
+            </th>
+            <th>
+                Emergency Person
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Relationship)
+            </th>
+
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.mainUser.FirstName  @item.mainUser.LastName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDNumber)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmergencyPerson)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Relationship)
+                </td>
+                <td>
+                    <a asp-action="Patient_File" asp-route-id="@item.FileID" class="btn btn-primary ">Full file</a>
+                    
+                </td>
+                <td>
+                    <a asp-action="index" asp-controller="Medical_Records" asp-route-id="@item.FileID" class="btn btn-success">Medical Records</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

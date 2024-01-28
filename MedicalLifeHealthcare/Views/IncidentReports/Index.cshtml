@@ -1,0 +1,167 @@
+﻿@using MedicalLifeHealthcare.Models
+@model MedicalLifeHealthcare.Models.IncidentReport
+
+@{
+    ViewData["ViewTitle"] = "List of Test Requests";
+    ViewData["Description"] = "List of all Test Request made by nurse";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GBV.cshtml";
+}
+
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Report Incident
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Report Incident</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Type" class="control-label"></label>
+                            <select asp-for="Type" class="form-control">
+                                <option value="Physical">Physical</option>
+                                <option value="Sexual">Sexual</option>
+                                <option value="Psychological">Psychological</option>
+                             
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Location" class="control-label"></label>
+                            <input asp-for="Location" class="form-control" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="InciodentDate" class="control-label"></label>
+                            <input asp-for="InciodentDate" class="form-control" />
+                            <span asp-validation-for="InciodentDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ActionsTaken" class="control-label"></label>
+                            <input asp-for="ActionsTaken" class="form-control" />
+                            <span asp-validation-for="ActionsTaken" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Report GBV" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="text-center">List of my reported gbv incidents</h3>
+<table id="REeport" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportDate)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InciodentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionsTaken)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (IncidentReport item in ViewBag.Rep)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportDate)
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InciodentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActionsTaken)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    @if(item.Status == "New")
+                    {
+                        <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#Delete-@item.Id">
+                            Delete
+                        </button>
+                        <!-- Button trigger modal -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="Delete-@item.Id" tabindex="-1" aria-labelledby="DeleteModalLabel-@item.Id" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-center" id="DeleteModalLabel-@item.Id">Confirmation for Deleting Report</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Are you sure you wan to delete this Incident report?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

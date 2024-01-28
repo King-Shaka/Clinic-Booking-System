@@ -1,0 +1,158 @@
+﻿@using MedicalLifeHealthcare.Models
+
+@{
+
+    ViewData["ViewTitle"] = "List of appointments";
+    ViewData["Description"] = "All  Appointments for the patient";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light rounded mb-2" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        @if (User.IsInRole("Nurse"))
+        {
+            <div class="collapse navbar-collapse row " id="navbarSupportedContent">
+                <div class="col-9">
+                    <p>
+                        <a class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New Appointment</a>
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add New Appointment For a Patient</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <partial name="/Views/Appointments/Create_Partial.cshtml" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+
+                <div class="col-3 justify-content-end align-content-end">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                </div>
+
+            </div>
+        }
+        else
+        {
+             <div class="collapse navbar-collapse row " id="navbarSupportedContent">
+            <div class="col-9">
+                <p>
+                        <a class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New Appointment</a>
+             
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add New Appointment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <partial name="/Views/Appointments/Create_Partial.cshtml" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+
+            <div class="col-3 justify-content-end align-content-end">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+
+        </div>
+        }
+
+       
+    </div>
+</nav>
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+              Appointment Date_Time
+            </th>
+            <th>
+                Reason for appointment
+            </th>
+            <th>
+                Status
+            </th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Appointments item in ViewBag.Appointmnet)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Time)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @if(item.Status == "New")
+                    {
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Delete">
+                            Delete Appointment
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Delete" tabindex="-1" aria-labelledby="DeleteLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteLabel">Delete Appointment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img class="rounded mx-auto d-block" src="~/images/delete-removebg-preview.png" style="width:250px" />
+                                        <h4>Are you sure to delete this appointment?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                                        <a asp-action="Delete_Appointment" asp-route-id="@item.AppointmentID" class="btn btn-danger">Delete appointment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+               @*      <a asp-action="Edit" asp-route-id="@item.AppointmentID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AppointmentID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AppointmentID">Delete</a> *@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

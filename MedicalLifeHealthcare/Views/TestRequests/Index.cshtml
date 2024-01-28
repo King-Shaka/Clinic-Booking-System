@@ -1,0 +1,179 @@
+﻿@model MedicalLifeHealthcare.Models.TestSampleVM
+@using MedicalLifeHealthcare.Areas.Identity.Data;
+@using MedicalLifeHealthcare.Models
+
+@{
+    ViewData["ViewTitle"] = "List of Test Requests";
+    ViewData["Description"] = "List of all Test Request made by nurse";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Pathology.cshtml";
+}
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert   w-100 @(Convert.ToString(TempData["UpdateType"]) == "success" ? "alert-success" : "alert-danger")" id="tempDataMessage" role="alert">
+        <h5 class="text-dark text-center">@TempData["Success"]</h5>
+    </div>
+}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Request Test
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create New Test Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="PatientId" class="control-label"></label>
+                                <select asp-for="PatientId" class="form-control">
+                                    @foreach (ApplicationUser item in ViewBag.Patints)
+                                    {
+                                        <option value="@item.Id">@item.FirstName @item.LastName </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TestName" class="control-label"></label>
+                                <input asp-for="TestName" class="form-control" />
+                                <span asp-validation-for="TestName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Instructions" class="control-label"></label>
+                                <input asp-for="Instructions" class="form-control" />
+                                <span asp-validation-for="Instructions" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Request" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<table id="MyTable" class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Patient Full Names
+            </th>
+            <th>
+                Clinician Information
+            </th>
+            <th>
+                Request Date
+            </th>
+            <th>
+                Test Name
+            </th>
+            <th>
+                Instructions
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TestRequest item in ViewBag.Test)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.FirstName)  @Html.DisplayFor(modelItem => item.Patient.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clinician.FirstName)  @Html.DisplayFor(modelItem => item.Clinician.LastName)
+                </td>
+                <td>
+                    @item.RequestDate.ToString("dd/MMMM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @if (item.Status == "Pending")
+                    {
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.TestRequestId">
+                            Add Sample
+                        </button>
+                        <a class="btn btn-warning" asp-action="Index" asp-controller="Samples" asp-route-Id = "@item.TestRequestId">View Sample</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal-@item.TestRequestId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.TestRequestId" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <img src="~/images/sample.png" style="width:70px" />
+                                        <h5 class="modal-title text-center" id="exampleModalLabel-@item.TestRequestId">Add Sample Information</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-12">
+                                            <form asp-controller="Samples" asp-action="Create">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group">
+                                                    <label hidden asp-for="TestRequestId" class="control-label"></label>
+                                                    <input hidden value="@item.TestRequestId" asp-for="TestRequestId" class="form-control" />
+                                                </div>
+                                              
+                                                <div class="form-group">
+                                                    <label asp-for="CollectionMethod" class="control-label">Collection Method</label>
+                                                    <input asp-for="CollectionMethod" class="form-control" />
+                                                    <span asp-validation-for="CollectionMethod" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="SampleContainerNumber" class="control-label">Sample Container Number</label>
+                                                    <input asp-for="SampleContainerNumber" class="form-control" />
+                                                    <span asp-validation-for="SampleContainerNumber" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="CollectionLocation" class="control-label">Collection Location</label>
+                                                    <input asp-for="CollectionLocation" class="form-control" />
+                                                    <span asp-validation-for="CollectionLocation" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Add Sample" class="btn btn-primary" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-controller="Samples" asp-action="All_Samples" asp-route-id="@item.TestRequestId">View Samples</a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
